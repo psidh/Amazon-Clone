@@ -1,46 +1,70 @@
-import React from 'react'
-
+import React from 'react';
+import Image from 'next/image';
 function Footer() {
   return (
-    <div className='grid grid-cols-4 mx-auto  p-20 bg-[#232f3e]'>
-      <div className='flex flex-col justify-start items-start text-left mx-4'>
-        <p className='text-md font-semibold pb-2 text-white'>Get to Know Us</p>
-        <p className='text-sm text-white'>About Us</p>
-        <p className='text-sm text-white'>Careers</p>
-        <p className='text-sm text-white'>Press Releases</p>
-        <p className='text-sm text-white'>Amazon Science</p>
+    <div className="bg-[#131a22] text-gray-300">
+      <div className="grid grid-cols-4 mx-32 p-20 ">
+        <div className="flex flex-col justify-start items-start text-left mx-4">
+          <p className="text-md font-semibold pb-2 ">Get to Know Us</p>
+          <p className="text-sm ">About Us</p>
+          <p className="text-sm ">Careers</p>
+          <p className="text-sm ">Press Releases</p>
+          <p className="text-sm ">Amazon Science</p>
+        </div>
+
+        <div className="flex flex-col justify-start items-start text-left mx-4">
+          <p className="text-md font-semibold pb-2 ">Connect with Us</p>
+          <p className="text-sm ">Facebook</p>
+          <p className="text-sm ">Twitter</p>
+          <p className="text-sm ">Instagram</p>
+        </div>
+
+        <div className="flex flex-col justify-start items-start text-left mx-4">
+          <p className="text-md font-semibold pb-2 ">Sell on Amazon</p>
+          <p className="text-sm ">Sell under Amazon Accelerator</p>
+          <p className="text-sm ">Protect and Build Your Brand</p>
+          <p className="text-sm ">Amazon Global Selling</p>
+          <p className="text-sm ">Become an Affiliate</p>
+          <p className="text-sm ">Fulfilment by Amazon</p>
+          <p className="text-sm ">Advertise Your Products</p>
+        </div>
+
+        <div className="flex flex-col justify-start items-start text-left mx-4">
+          <p className="text-md font-semibold pb-2 ">Let Us Help You</p>
+          <p className="text-sm ">COVID-19 and Amazon</p>
+          <p className="text-sm ">Your Account</p>
+          <p className="text-sm ">Returns Centre</p>
+          <p className="text-sm ">100% Purchase Protection</p>
+          <p className="text-sm ">Amazon App Download</p>
+          <p className="text-sm ">Help</p>
+        </div>
       </div>
 
-      <div className='flex flex-col justify-start items-start text-left mx-4'>
-        <p className='text-md font-semibold pb-2 text-white'>Connect with Us</p>
-        <p className='text-sm text-white'>Facebook</p>
-        <p className='text-sm text-white'>Twitter</p>
-        <p className='text-sm text-white'>Instagram</p>
+      <div className="mx-32 pb-12 text-gray-200 flex flex-col items-center justify-center">
+        <div
+          className="flex justify-center items-center
+        "
+        >
+          <p className="px-2 hover:underline underline-offset-2">
+            Conditions of Use & Sale
+          </p>
+          <p className="px-2 hover:underline underline-offset-2">
+            {' '}
+            Privacy Notice{' '}
+          </p>
+          <p className="px-2 hover:underline underline-offset-2">
+            {' '}
+            Interest-Based Ads{' '}
+          </p>
+        </div>
+        <div className="flex justify-center items-center">
+          <p className="px-2">
+            © 1996-2023, Amazon.com, Inc. or its affiliates
+          </p>
+        </div>
       </div>
-
-      <div className='flex flex-col justify-start items-start text-left mx-4'>
-        <p className='text-md font-semibold pb-2 text-white'>Sell on Amazon</p>
-        <p className='text-sm text-white'>Sell under Amazon Accelerator</p>
-        <p className='text-sm text-white'>Protect and Build Your Brand</p>
-        <p className='text-sm text-white'>Amazon Global Selling</p>
-        <p className='text-sm text-white'>Become an Affiliate</p>
-        <p className='text-sm text-white'>Fulfilment by Amazon</p>
-        <p className='text-sm text-white'>Advertise Your Products</p>
-      </div>
-
-      <div className='flex flex-col justify-start items-start text-left mx-4'>
-        <p className='text-md font-semibold pb-2 text-white'>Let Us Help You</p>
-        <p className='text-sm text-white'>COVID-19 and Amazon</p>
-        <p className='text-sm text-white'>Your Account</p>
-        <p className='text-sm text-white'>Returns Centre</p>
-        <p className='text-sm text-white'>100% Purchase Protection</p>
-        <p className='text-sm text-white'>Amazon App Download</p>
-        <p className='text-sm text-white'>Help</p>
-      </div>
-
-      
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
