@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 function Footer() {
   return (
-    <div className="bg-[#131a22] text-gray-300">
+    <div className="bg-[#131a22] text-gray-200">
       <div className="grid grid-cols-4 mx-32 p-20 ">
         <div className="flex flex-col justify-start items-start text-left mx-4">
           <p className="text-md font-semibold pb-2 ">Get to Know Us</p>
