@@ -7,6 +7,7 @@ import Slides from './components/Slider';
 import Gallery from './components/Gallery';
 import Multi from './components/Multi';
 import Button from './components/Button';
+import Footer from './components/Footer';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -25,6 +26,7 @@ export default function Home() {
       <Gallery />
       <Multi />
       <Button />
+      <Footer />
     </div>
     </>
   );
