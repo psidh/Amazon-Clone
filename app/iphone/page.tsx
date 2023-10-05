@@ -25,22 +25,36 @@ function page() {
 
   return (
     <div>
-      <div className="flex flex-row py-20 px-10">
-        <div className="flex w-1/3 ">
+      <div className="flex flex-col lg:flex-row  py-20 px-10">
+        <div className="flex lg:w-1/3 pb-20">
           {/* Set max height for the image container */}
-          <div style={{ maxHeight: '500px', width: '100%' }}>
+          <div style={{ width: '100%', overflow: 'hidden' }}>
+            <style jsx>{`
+              @media (max-width: 600px) {
+                div {
+                  max-height: 300px; /* Adjust the value for smaller screens */
+                }
+              }
+
+              @media (min-width: 601px) and (max-width: 1024px) {
+                div {
+                  max-height: 400px; /* Adjust the value for medium screens */
+                }
+              }
+            `}</style>
+
             <Image
               src={iPhone}
               layout="responsive"
-              width={500}
-              height={1200}
+              width={400}
+              height={300}
               objectFit="cover"
-              alt="I"
+              alt="iPhone"
             />
           </div>
         </div>
 
-        <div className="flex  w-3/6 px-6">
+        <div className="flex lg:w-3/6 sm:mt-10 lg:p-0 px-6">
           <div className="flex flex-col flex-grow">
             <h1 className="text-2xl">Apple iPhone 15 (1TB) - Titanium</h1>
             <a
@@ -189,7 +203,7 @@ function page() {
           </div>
         </div>
 
-        <div className="flex flex-col w-1/6">
+        <div className="flex flex-col lg:w-1/6">
           <div className="flex flex-col  items-start bg-gray-100 border p-4 rounded-t-lg">
             <p className="font-semibold">With Exchange</p>
             <p className="text-red-700">Up to ₹32,750.00 off</p>
@@ -214,18 +228,25 @@ function page() {
               Or fastest delivery{' '}
               <span className="font-semibold">Saturday, 7 October.</span> Order
               within 10 hrs 12 mins.
-              <span className="mt-1 text-sm text-teal-600 hover:text-amber-500 cursor-pointer"> Details</span>
-
+              <span className="mt-1 text-sm text-teal-600 hover:text-amber-500 cursor-pointer">
+                {' '}
+                Details
+              </span>
             </p>
-            <p className='text-lg text-green-700 my-2'>In Stock</p>
+            <p className="text-lg text-green-700 my-2">In Stock</p>
 
-            <button className='text-sm w-full py-2 mb-1 mt-2 bg-yellow-400 rounded-full hover:bg-yellow-500 shadow-md'>Add to Cart</button>
-            <button className='text-sm w-full py-2 mt-1 bg-orange-400 rounded-full hover:bg-orange-500 shadow-md'>Add to Cart</button>
-
+            <button className="text-sm w-full py-2 mb-1 mt-2 bg-yellow-400 rounded-full hover:bg-yellow-500 shadow-md">
+              Add to Cart
+            </button>
+            <button className="text-sm w-full py-2 mt-1 bg-orange-400 rounded-full hover:bg-orange-500 shadow-md">
+              Add to Cart
+            </button>
           </div>
 
-          <hr className='mt-4'/>
-          <button className='text-sm w-full py-2 mt-4 rounded-xl border text-left hover:shadow-md pl-3'>Add to wish list</button>
+          <hr className="mt-4" />
+          <button className="text-sm w-full py-2 mt-4 rounded-xl border text-left hover:shadow-md pl-3">
+            Add to wish list
+          </button>
         </div>
       </div>
     </div>
