@@ -1,33 +1,21 @@
-'use client';
 import React from 'react';
 import Image from 'next/image';
-import { useState } from 'react';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { FaSearch } from 'react-icons/fa';
-import { BsCart } from 'react-icons/bs';
+import  {BsCart} from "react-icons/bs"
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
+  
   return (
-    <div>
-      <div className="flex justify-items items center bg-[#131a22] py-2 px-4">
-        <a href="/">
-          <Image
-            src={'/amazon.png'}
-            width={100}
-            height={10}
-            alt="amazon logo"
-            className="mr-2"
-          />
-        </a>
-        <div className="flex lg:hidden cursor-pointer" onClick={toggleMenu}>
-          <div className="text-white">{menuOpen ? 'Close' : 'Menu'}</div>
-        </div>
-      </div>
+    <div className="flex justify-items items center bg-[#131a22] py-2 px-4">
+      <a href="/">
+      <Image
+        src={'/amazon.png'}
+        width={100}
+        height={10}
+        alt="amazon logo"
+        className="mr-2"
+        />
+      </a>
 
       <div className="flex justify-center items-center px-2 hover:border hover:border-white  mx-2">
         <HiOutlineLocationMarker className="text-md text-white" />
@@ -77,14 +65,18 @@ function Navbar() {
       <div className="flex justify-bottom items-end px-2 hover:border hover:border-white">
         <div className="flex flex-col justify-start items-left">
           <p className="text-sm text-gray-200">Returns</p>
-          <p className="text-md text-gray-200 font-semibold">& Orders</p>
+          <p className="text-md text-gray-200 font-semibold">
+            & Orders
+          </p>
         </div>
       </div>
 
       <div className="flex justify-end items-end px-2 hover:border hover:border-white">
         <div className="flex justify-end items-end text-white">
-          <BsCart className="text-3xl text-white mb-2" />
-          <p className="text-md text-gray-200 font-semibold">& Orders</p>
+        <BsCart className="text-3xl text-white mb-2" />
+          <p className="text-md text-gray-200 font-semibold">
+            & Orders
+          </p>
         </div>
       </div>
     </div>
