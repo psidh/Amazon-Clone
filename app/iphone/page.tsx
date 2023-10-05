@@ -72,13 +72,12 @@ function page() {
             <Image src={'/amazon-logo-pack/policy.png'} width={450} height={70} alt='benefits' className='my-4'></Image> 
             <hr />
             
-            <div className='flex text-center'>
-              <button className='font-semibold flex flex-col w-1/6 p-4 border text-sm m-4' onClick={Black}>Black</button>
-              <button className='font-semibold flex flex-col w-1/6 p-4 border text-sm m-4' onClick={Green}>Green</button>
-              <button className='font-semibold flex flex-col w-1/6 p-4 border text-sm m-4' onClick={Pink}>Pink</button>
-              <button className='font-semibold flex flex-col w-1/6 p-4 border text-sm m-4' onClick={Blue}>Blue</button>
-              <button className='font-semibold flex flex-col w-1/6 p-4 border text-sm m-4' onClick={Yellow}>Yellow</button>
-            
+            <div className='flex '>
+              <button className='font-semibold flex flex-col w-1/6 p-4 border text-sm m-4 hover:border-black ' onClick={Black}>Black</button>
+              <button className='font-semibold flex flex-col w-1/6 p-4 border text-sm m-4 hover:border-green-500 ' onClick={Green}>Green</button>
+              <button className='font-semibold flex flex-col w-1/6 p-4 border text-sm m-4 hover:border-pink-600 ' onClick={Pink}>Pink</button>
+              <button className='font-semibold flex flex-col w-1/6 p-4 border text-sm m-4 hover:border-blue-500 ' onClick={Blue}>Blue</button>
+              <button className='font-semibold flex flex-col w-1/6 p-4 border text-sm m-4 hover:border-yellow-500 ' onClick={Yellow}>Yellow</button>
             </div>
           </div>
         </div>
