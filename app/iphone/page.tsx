@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
+import Router, { useRouter } from 'next/navigation';
 function page() {
   const [iPhone, setiPhone] = useState('/iPhone.jpeg');
 
@@ -23,39 +24,34 @@ function page() {
     setiPhone('/iPhoneP.jpeg');
   };
 
+  const router = useRouter();
+
+  const handleAddToCart = () => {
+    // Add logic here to handle adding the item to the cart
+
+    // Redirect to the /cart page
+    router.push('/cart');
+  };
   return (
     <div>
-      <div className="flex flex-col lg:flex-row  py-20 px-10">
-        <div className="flex lg:w-1/3 pb-20">
+      <div className="flex flex-col justify-center xl:flex-row  py-20 px-10">
+        <div className="flex lg:w-1/3 sm:pb-10 ">
           {/* Set max height for the image container */}
-          <div style={{ width: '100%', overflow: 'hidden' }}>
-            <style jsx>{`
-              @media (max-width: 600px) {
-                div {
-                  max-height: 300px; /* Adjust the value for smaller screens */
-                }
-              }
-
-              @media (min-width: 601px) and (max-width: 1024px) {
-                div {
-                  max-height: 400px; /* Adjust the value for medium screens */
-                }
-              }
-            `}</style>
-
+          <div className="w-full overflow-hidden sm:pb-10">
             <Image
               src={iPhone}
               layout="responsive"
-              width={400}
-              height={300}
+              width={500}
+              height={1200}
               objectFit="cover"
               alt="iPhone"
+              className="w-full h-full"
             />
           </div>
         </div>
 
-        <div className="flex lg:w-3/6 sm:mt-10 lg:p-0 px-6">
-          <div className="flex flex-col flex-grow">
+        <div className="flex lg:w-3/6 px-6 mx-auto">
+          <div className="flex flex-col lg:flex-grow sm:flex-shrink">
             <h1 className="text-2xl">Apple iPhone 15 (1TB) - Titanium</h1>
             <a
               href="https://apple.com/in/"
@@ -196,7 +192,7 @@ function page() {
             <a
               href="https://apple.com/in/"
               target="_blank"
-              className="mt-1 text-sm text-teal-600 hover:text-amber-500 cursor-pointer"
+              className="my-2 text-sm text-teal-600 hover:text-amber-500 cursor-pointer"
             >
               See more product Details
             </a>
@@ -235,11 +231,11 @@ function page() {
             </p>
             <p className="text-lg text-green-700 my-2">In Stock</p>
 
-            <button className="text-sm w-full py-2 mb-1 mt-2 bg-yellow-400 rounded-full hover:bg-yellow-500 shadow-md">
+            <button onClick={handleAddToCart} className="text-sm w-full py-2 mb-1 mt-2 bg-yellow-400 rounded-full hover:bg-yellow-500 shadow-md">
               Add to Cart
             </button>
             <button className="text-sm w-full py-2 mt-1 bg-orange-400 rounded-full hover:bg-orange-500 shadow-md">
-              Add to Cart
+              Buy Now
             </button>
           </div>
 

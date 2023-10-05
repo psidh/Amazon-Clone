@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { FaSearch } from 'react-icons/fa';
 import { BsCart } from 'react-icons/bs';
+import { useState } from 'react';
 function Navbar() {
   return (
     <div className="flex justify-items items center bg-[#131a22] py-2 px-4">
