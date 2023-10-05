@@ -66,7 +66,7 @@ function Footer() {
       <div className="bg-black p-8 text-gray-200 flex flex-col items-center justify-center">
         <a href="/">
         <Image
-          src={'/logo/amazon-logo-white.png'}
+          src={'/amazon-logo-pack/amazon-logo-white.png'}
           alt="logo"
           width={100}
           height={20}
