@@ -58,7 +58,7 @@ function page() {
               with Amazon Pay Later.
             </p>
             <hr />
-            <div className="flex justify-between items-center">
+            <div className="flex justify-left items-center py-2">
               <Image
                 src={'/offer.jpeg'}
                 width={20}
@@ -66,7 +66,7 @@ function page() {
                 alt="I"
                 className="py-2"
               />
-              <p className="text-sm font-semibold">Inclusive of all Taxes</p>
+              <p className="text-sm font-semibold pl-2">Inclusive of all Taxes</p>
             </div>
             <div className="flex flex-col w-2/6 p-4 rounded-md shadow-md text-sm my-2 mb-4">
               <h2 className="font-semibold">No Cost EMI</h2>
