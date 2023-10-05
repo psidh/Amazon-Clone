@@ -6,13 +6,15 @@ import  {BsCart} from "react-icons/bs"
 function Navbar() {
   return (
     <div className="flex justify-items items center bg-[#131a22] py-2 px-4">
+      <a href="/">
       <Image
         src={'/amazon.png'}
         width={100}
         height={10}
         alt="amazon logo"
         className="mr-2"
-      ></Image>
+        />
+      </a>
 
       <div className="flex justify-center items-center px-2 hover:border hover:border-white  mx-2">
         <HiOutlineLocationMarker className="text-md text-white" />
