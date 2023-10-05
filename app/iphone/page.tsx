@@ -66,7 +66,9 @@ function page() {
                 alt="I"
                 className="py-2"
               />
-              <p className="text-sm font-semibold pl-2">Inclusive of all Taxes</p>
+              <p className="text-sm font-semibold pl-2">
+                Inclusive of all Taxes
+              </p>
             </div>
             <div className="flex flex-col w-2/6 p-4 rounded-md shadow-md text-sm my-2 mb-4">
               <h2 className="font-semibold">No Cost EMI</h2>
@@ -190,12 +192,40 @@ function page() {
         <div className="flex flex-col w-1/6">
           <div className="flex flex-col  items-start bg-gray-100 border p-4 rounded-t-lg">
             <p className="font-semibold">With Exchange</p>
-            <p className='text-red-700'>Up to ₹32,750.00 off</p>
+            <p className="text-red-700">Up to ₹32,750.00 off</p>
           </div>
           <div className="flex flex-col items-start border p-4 rounded-b-lg">
-            <p className="font-semibold">Without Exchange</p>
-            <p>₹1,84,900</p>
+            <p className="font-semibold ">Without Exchange</p>
+            <p className="text-red-700 font-semibold">₹1,84,900</p>
+            <p>
+              {' '}
+              <span className="mt-1 text-sm text-teal-700 hover:text-amber-500 cursor-pointer">
+                FREE delivery
+              </span>{' '}
+              <span className="font-semibold">Sunday 8th, October.</span>{' '}
+            </p>
+            <a
+              href="/"
+              className="my-2 text-sm text-teal-600 hover:text-amber-500 cursor-pointer"
+            >
+              See details
+            </a>
+            <p>
+              Or fastest delivery{' '}
+              <span className="font-semibold">Saturday, 7 October.</span> Order
+              within 10 hrs 12 mins.
+              <span className="mt-1 text-sm text-teal-600 hover:text-amber-500 cursor-pointer"> Details</span>
+
+            </p>
+            <p className='text-lg text-green-700 my-2'>In Stock</p>
+
+            <button className='text-sm w-full py-2 mb-1 mt-2 bg-yellow-400 rounded-full hover:bg-yellow-500 shadow-md'>Add to Cart</button>
+            <button className='text-sm w-full py-2 mt-1 bg-orange-400 rounded-full hover:bg-orange-500 shadow-md'>Add to Cart</button>
+
           </div>
+
+          <hr className='mt-4'/>
+          <button className='text-sm w-full py-2 mt-4 rounded-xl border text-left hover:shadow-md pl-3'>Add to wish list</button>
         </div>
       </div>
     </div>
