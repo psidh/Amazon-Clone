@@ -31,7 +31,7 @@ function Navbar() {
         <input
           id="search"
           type="text"
-          className="bg-white w-[600px] pl-4 outline-none"
+          className="bg-white lg:w-[600px] flex-shrink  pl-4 outline-none"
           placeholder="Search Amazon"
         />
 
