@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Router, { useRouter } from 'next/navigation';
 function page() {
-  const [iPhone, setiPhone] = useState('/iPhone.jpeg');
+  const [iPhone, setiPhone] = useState('/iPhone.png');
 
   const Black = () => {
     setiPhone('/iPhone.png');
