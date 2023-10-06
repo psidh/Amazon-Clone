@@ -14,14 +14,14 @@ function Navbar() {
 
   return (
     <div>
-      <div className="flex justify-items items center bg-[#131a22] py-2 px-4">
+      <div className="hidden md:flex justify-items items center bg-[#131a22] py-2 px-4">
         <a href="/">
           <Image
             src={'/amazon.png'}
             width={100}
             height={10}
             alt="amazon logo"
-            className="mr-2"
+            className="mr-2 fixed"
           />
         </a>
 
@@ -104,20 +104,20 @@ function Navbar() {
       </div>
 
       {isNavOpen && ( // Render the navigation links if isNavOpen is true
-        <div className="flex flex-col md:hidden text-white">
+        <div className="flex flex-col lg:hidden text-white">
           <a className="text-[#131a22] m-6" href="/">
             Home
           </a>
           <a className="m-6" href="/#resume">
             Location
           </a>
-          <a className="m-6   " href="/#blog">
+          <a className="m-6" href="/#blog">
             Accounts & Lists
           </a>
-          <a className="m-6   " href="/#footer">
+          <a className="m-6" href="/#footer">
             Returns & Orders
           </a>
-          <a className="m-6   " href="/#footer">
+          <a className="m-6" href="/#footer">
             Cart
           </a>
         </div>
