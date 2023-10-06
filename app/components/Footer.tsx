@@ -3,8 +3,8 @@ import Image from 'next/image';
 function Footer() {
   return (
     <div className="bg-[#131a22] text-gray-200">
-      <div className="grid grid-cols-4 mx-32 p-20 ">
-        <div className="flex flex-col justify-start items-start text-left mx-4">
+      <div className="grid  sm:grid-cols-1 sm:mx-4 sm:px-8 sm:py-10 md:grid-cols-2 md:mx-16 md:p-14 lg:grid-cols-4 lg:mx-32 lg:p-20 ">
+        <div className="flex flex-col justify-start items-start text-left m-4">
           <p className="text-md font-semibold pb-2 ">Get to Know Us</p>
           <p className="text-sm ">About Us</p>
           <p className="text-sm ">Careers</p>
@@ -12,14 +12,14 @@ function Footer() {
           <p className="text-sm ">Amazon Science</p>
         </div>
 
-        <div className="flex flex-col justify-start items-start text-left mx-4">
+        <div className="flex flex-col justify-start items-start text-left m-4">
           <p className="text-md font-semibold pb-2 ">Connect with Us</p>
           <p className="text-sm ">Facebook</p>
           <p className="text-sm ">Twitter</p>
           <p className="text-sm ">Instagram</p>
         </div>
 
-        <div className="flex flex-col justify-start items-start text-left mx-4">
+        <div className="flex flex-col justify-start items-start text-left m-4">
           <p className="text-md font-semibold pb-2 ">Sell on Amazon</p>
           <p className="text-sm ">Sell under Amazon Accelerator</p>
           <p className="text-sm ">Protect and Build Your Brand</p>
@@ -29,7 +29,7 @@ function Footer() {
           <p className="text-sm ">Advertise Your Products</p>
         </div>
 
-        <div className="flex flex-col justify-start items-start text-left mx-4">
+        <div className="flex flex-col justify-start items-start text-left m-4">
           <p className="text-md font-semibold pb-2 ">Let Us Help You</p>
           <p className="text-sm ">COVID-19 and Amazon</p>
           <p className="text-sm ">Your Account</p>

@@ -35,7 +35,7 @@ function page() {
   return (
     <div>
       <div className="flex flex-col justify-center xl:flex-row  py-20 px-10">
-        <div className="flex lg:w-1/3 sm:pb-10 ">
+        <div className="flex lg:w-1/3 sm:pb-10 container mx-auto">
           {/* Set max height for the image container */}
           <div className="w-full overflow-hidden sm:pb-10">
             <Image

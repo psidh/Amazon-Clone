@@ -35,7 +35,7 @@ function Cart() {
           <hr />
           <div className="ml-auto">
             {/* Align content to the right */}
-            <p className="text-3xl">
+            <p className="text-3xl mx-4">
               <span className="font-semibold">Sub Total:</span> ₹89,900.00
             </p>
           </div>
