@@ -7,7 +7,7 @@ function page() {
   const [iPhone, setiPhone] = useState('/iPhone.jpeg');
 
   const Black = () => {
-    setiPhone('/iPhone.jpeg');
+    setiPhone('/iPhone.png');
   };
 
   const Green = () => {
