@@ -48,7 +48,7 @@ function Navbar() {
           </button>
         </div>
 
-        <div className="hidden lg:flex justify-bottom items-end px-2 hover:border hover:border-white">
+        <div className="hidden xl:flex justify-bottom items-end px-2 hover:border hover:border-white">
           <Image
             src={'/india.svg'}
             width={20}
@@ -69,7 +69,7 @@ function Navbar() {
             </p>
           </div>
         </div>
-        <div className="hidden md:flex justify-bottom items-end px-2 hover:border hover:border-white">
+        <div className="hidden xl:flex justify-bottom items-end px-2 hover:border hover:border-white">
           <div className="flex flex-col justify-start items-left">
             <p className="text-sm text-gray-200">Returns</p>
             <p className="text-md text-gray-200 font-semibold">& Orders</p>
@@ -94,7 +94,7 @@ function Navbar() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="flex lg:hidden w-5 h-5 cursor-pointer" // Add cursor-pointer to indicate it's clickable
+          className="flex lg:hidden w-5 h-5 cursor-pointer text-white" // Add cursor-pointer to indicate it's clickable
         >
           <line x1="3" y1="12" x2="21" y2="12" />
           <line x1="3" y1="6" x2="21" y2="6" />

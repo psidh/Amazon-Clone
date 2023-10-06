@@ -48,7 +48,7 @@ const Slides: React.FC = () => {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     autoplay: true,
     autoplaySpeed: 1400,
   };
