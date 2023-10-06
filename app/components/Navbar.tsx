@@ -14,18 +14,17 @@ function Navbar() {
 
   return (
     <div>
-      <div className="hidden md:flex justify-items items center bg-[#131a22] py-2 px-4">
+      <div className="flex justify-between items-center bg-[#131a22] py-1 px-4">
         <a href="/">
           <Image
             src={'/amazon.png'}
-            width={100}
+            width={80}
             height={10}
             alt="amazon logo"
-            className="mr-2 fixed"
           />
         </a>
 
-        <div className="flex justify-center items-center px-2 hover:border hover:border-white  mx-2">
+        <div className="hidden md:flex justify-center items-center px-2 hover:border hover:border-white  mx-2">
           <HiOutlineLocationMarker className="text-md text-white" />
           <div className="flex flex-col justify-start items-left px-2">
             <p className="text-sm text-gray-500">Deliver to</p>
@@ -33,23 +32,23 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="flex justify-items-start px-2">
-          <button className="py-1 px-6 bg-gray-200 hover:bg-gray-300 rounded-l-sm text-black ">
+        <div className="flex justify-center w-1/2 items-center mx-2">
+          <button className="py-1 px-4 bg-gray-200 hover:bg-gray-300 rounded-l-sm text-black ">
             All
           </button>
           <input
             id="search"
             type="text"
-            className="bg-white sm:[w-40px] md:[w-300px] lg:w-[600px] flex-shrink  pl-4 outline-none"
+            className="bg-white overflow-auto w-full flex-shrink pl-4 py-1 outline-none"
             placeholder="Search Amazon"
           />
 
-          <button className="py-1 px-4 w-32px rounded-r-sm bg-[#febd69] hover:opacity-90">
+          <button className="py-2 px-4  rounded-r-sm bg-[#febd69] hover:opacity-90">
             <FaSearch className="text-md text-black " />{' '}
           </button>
         </div>
 
-        <div className="flex justify-bottom items-end px-2 hover:border hover:border-white">
+        <div className="hidden lg:flex justify-bottom items-end px-2 hover:border hover:border-white">
           <Image
             src={'/india.svg'}
             width={20}
@@ -62,7 +61,7 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="flex justify-bottom items-end px-2 hover:border hover:border-white">
+        <div className="hidden lg:flex justify-bottom items-end px-2 hover:border hover:border-white">
           <div className="flex flex-col justify-start items-left">
             <p className="text-sm text-gray-200">Hello, sign in</p>
             <p className="text-md text-gray-200 font-semibold">
@@ -70,14 +69,14 @@ function Navbar() {
             </p>
           </div>
         </div>
-        <div className="flex justify-bottom items-end px-2 hover:border hover:border-white">
+        <div className="hidden md:flex justify-bottom items-end px-2 hover:border hover:border-white">
           <div className="flex flex-col justify-start items-left">
             <p className="text-sm text-gray-200">Returns</p>
             <p className="text-md text-gray-200 font-semibold">& Orders</p>
           </div>
         </div>
 
-        <div className="flex justify-end items-end px-2 hover:border hover:border-white">
+        <div className="hidden md:flex justify-end items-end px-2 hover:border hover:border-white">
           <div className="flex justify-end items-end text-white">
             <BsCart className="text-3xl text-white mb-2" />
             <p className="text-md text-gray-200 font-semibold">& Orders</p>
