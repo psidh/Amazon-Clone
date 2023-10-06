@@ -54,7 +54,7 @@ const Gallery: React.FC = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-4 gap-4 mt-6">
+      <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
         {cardData.map((card, index) => (
           <div key={index}>
             <InformationCard
