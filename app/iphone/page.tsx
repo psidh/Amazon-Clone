@@ -50,7 +50,7 @@ function page() {
           </div>
         </div>
 
-        <div className="flex lg:w-3/6 px-6 mx-auto">
+        <div className="flex lg:w-3/6 lg:px-4 container mx-auto">
           <div className="flex flex-col lg:flex-grow sm:flex-shrink">
             <h1 className="text-2xl">Apple iPhone 15 (1TB) - Titanium</h1>
             <a
@@ -154,14 +154,14 @@ function page() {
                 style={{ listStyleType: 'disc', paddingLeft: '20px' }}
                 className="text-sm"
               >
-                <li className="py-1">
+                <li className="py-1 text-justify">
                   FORGED IN TITANIUM — iPhone 15 Pro has a strong and light
                   aerospace-grade titanium design with a textured matte-glass
                   back. It also features a Ceramic Shield front that’s tougher
                   than any smartphone glass. And it’s splash, water, and dust
                   resistant.
                 </li>
-                <li className="py-1">
+                <li className="py-1 text-justify">
                   ADVANCED DISPLAY — The 6.1” Super Retina XDR display with
                   ProMotion ramps up refresh rates to 120Hz when you need
                   exceptional graphics performance. Dynamic Island bubbles up
@@ -169,19 +169,19 @@ function page() {
                   your Lock Screen stays glanceable, so you don’t have to tap it
                   to stay in the know.
                 </li>
-                <li className="py-1">
+                <li className="py-1 text-justify">
                   GAME-CHANGING A17 PRO CHIP — A Pro-class GPU makes mobile
                   games feel so immersive, with rich environments and realistic
                   characters. A17 Pro is also incredibly efficient and helps to
                   deliver amazing all-day battery life.
                 </li>
-                <li className="py-1">
+                <li className="py-1 text-justify">
                   POWERFUL PRO CAMERA SYSTEM — Get incredible framing
                   flexibility with 7 pro lenses. Capture super high-resolution
                   photos with more color and detail using the 48MP Main camera.
                   And take sharper close-ups from farther away.
                 </li>
-                <li className="py-1">
+                <li className="py-1 text-justify">
                   CUSTOMIZABLE ACTION BUTTON — Action button is a fast track to
                   your favorite feature. Just set the one you want, like Silent
                   mode, Camera, Voice Memo, Shortcut, and more. Then press and
@@ -199,7 +199,7 @@ function page() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:w-1/6">
+        <div className="flex flex-col lg:w-1/6 container mx-auto">
           <div className="flex flex-col  items-start bg-gray-100 border p-4 rounded-t-lg">
             <p className="font-semibold">With Exchange</p>
             <p className="text-red-700">Up to ₹32,750.00 off</p>
