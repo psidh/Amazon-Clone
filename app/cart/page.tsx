@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 
 function Cart() {
@@ -10,7 +9,7 @@ function Cart() {
           <hr />
           <div className="flex  justify-between items-center mt-4 ">
             <Image
-              src={'/iPhone.png'}
+              src={'/iPhone.jpeg'}
               width={120}
               height={120}
               alt="iPhone Image"

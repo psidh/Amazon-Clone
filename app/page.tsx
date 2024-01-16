@@ -1,33 +1,21 @@
-'use client';
-import Image from 'next/image';
-import Navbar from './components/Navbar';
-import Secbar from './components/Secbar';
-import { createGlobalStyle } from 'styled-components';
-import Slides from './components/Slider';
-import Gallery from './components/Gallery';
-import Multi from './components/Multi';
-import Button from './components/Button';
-import Footer from './components/Footer';
+'use client'
+import Secbar from '@/components/Secbar';
+import Slides from '@/components/Slider';
+import Gallery from '@/components/Gallery';
+import Multi from '@/components/Multi';
+import Button from '@/components/Button';
 
-const GlobalStyle = createGlobalStyle`
-@font-face {
-  font-family: 'Amazon';
-  src: url('/OfficinaSansStd-Bold.otf') format('opentype');
-}
-`;
-
-export default function Home() {
+const  Home = () => {
   return (
-    <>
-    <div style={{ fontFamily: 'Amazon, sans-serif' }}>
-      <Navbar />
+    <div>
       <Secbar />
       <Slides />
       <Gallery />
       <Multi />
       <Button />
-      <Footer />
     </div>
-    </>
   );
 }
+
+
+export default Home;

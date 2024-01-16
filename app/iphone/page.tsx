@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Router, { useRouter } from 'next/navigation';
 function page() {
-  const [iPhone, setiPhone] = useState('/iPhone.png');
+  const [iPhone, setiPhone] = useState('/iPhone.jpeg');
 
-  const Black = () => {
-    setiPhone('/iPhone.png');
+  const White = () => {
+    setiPhone('/iPhone.jpeg');
   };
 
   const Green = () => {
@@ -97,10 +97,10 @@ function page() {
             <hr />
             <div className="flex my-4">
               <button
-                className="font-semibold flex flex-col w-1/6 p-4 border text-sm m-4 hover:border-black "
-                onClick={Black}
+                className="font-semibold flex flex-col w-1/6 p-4 border text-sm m-4 hover:border-White "
+                onClick={White}
               >
-                Black
+                White
               </button>
               <button
                 className="font-semibold flex flex-col w-1/6 p-4 border text-sm m-4 hover:border-green-500 "
@@ -231,7 +231,10 @@ function page() {
             </p>
             <p className="text-lg text-green-700 my-2">In Stock</p>
 
-            <button onClick={handleAddToCart} className="text-sm w-full py-2 mb-1 mt-2 bg-yellow-400 rounded-full hover:bg-yellow-500 shadow-md">
+            <button
+              onClick={handleAddToCart}
+              className="text-sm w-full py-2 mb-1 mt-2 bg-yellow-400 rounded-full hover:bg-yellow-500 shadow-md"
+            >
               Add to Cart
             </button>
             <button className="text-sm w-full py-2 mt-1 bg-orange-400 rounded-full hover:bg-orange-500 shadow-md">

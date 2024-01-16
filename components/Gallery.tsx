@@ -34,7 +34,7 @@ const Gallery: React.FC = () => {
     },
     {
       title: 'iPhone 15',
-      image: '/iPhone.png',
+      image: '/iPhone.jpeg',
       description: 'See all offers',
       link: '/iphone'
     },
