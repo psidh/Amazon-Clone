@@ -42,7 +42,7 @@ export default function Login() {
   }, [user]);
 
   return (
-    <div className="flex flex-col my-16 justify-center items-center">
+    <div className="flex flex-col my-16 justify-center items-center h-screen">
       <div className="flex flex-col border border-gray-300 py-4 px-8 rounded-lg 2xl w-[80%] md:w-[35%]">
         <h1 className="text-4xl my-8">Login</h1>
 
