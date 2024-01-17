@@ -24,7 +24,7 @@ function Navbar() {
           />
         </a>
 
-        <div className="hidden md:flex justify-center items-center px-2 hover:border hover:border-white  mx-2">
+        <div className="hidden md:flex justify-center items-center px-2 border cursor-pointer border-[#131a22] hover:border-white  mx-2">
           <HiOutlineLocationMarker className="text-md text-white" />
           <div className="flex flex-col justify-start items-left px-2">
             <p className="text-sm text-gray-500">Deliver to</p>
@@ -48,7 +48,7 @@ function Navbar() {
           </button>
         </div>
 
-        <div className="hidden xl:flex justify-bottom items-end px-2 border  border-[#131a22] hover:border-white">
+        <div className="hidden xl:flex justify-bottom items-end px-2 border cursor-pointer border-[#131a22] hover:border-white">
           <Image
             src={'/india.svg'}
             width={20}
@@ -61,7 +61,7 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="hidden lg:flex justify-bottom items-end px-2 border border-[#131a22] hover:border-white rounded-lg">
+        <div className="hidden lg:flex justify-bottom items-end px-2 border cursor-pointer border-[#131a22] hover:border-white rounded-lg">
           <div className="flex flex-col justify-start items-left">
             <a href='/login' className="text-sm text-gray-200">Hello, sign in</a>
             <p className="text-md text-gray-200 font-semibold">
@@ -69,14 +69,14 @@ function Navbar() {
             </p>
           </div>
         </div>
-        <div className="hidden lg:flex justify-bottom items-end px-2 border border-[#131a22] hover:border-white rounded-lg">
+        <div className="hidden lg:flex justify-bottom items-end px-2 border cursor-pointer border-[#131a22] hover:border-white rounded-lg">
           <div className="flex flex-col justify-start items-left">
             <p className="text-sm text-gray-200">Returns</p>
             <p className="text-md text-gray-200 font-semibold">& Orders</p>
           </div>
         </div>
 
-        <div className="hidden lg:flex justify-bottom items-end px-2 border border-[#131a22] hover:border-white rounded-lg">
+        <div className="hidden lg:flex justify-bottom items-end px-2 border cursor-pointer border-[#131a22] hover:border-white rounded-lg">
           <div className="flex justify-end items-end text-white">
             <BsCart className="text-3xl text-white mb-2" />
             <p className="text-md text-gray-200 font-semibold">& Orders</p>
