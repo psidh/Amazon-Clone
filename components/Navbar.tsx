@@ -1,18 +1,31 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
-import { FiMenu } from "react-icons/fi";
+import { FiMenu } from 'react-icons/fi';
 import { FaSearch } from 'react-icons/fa';
 import { BsCart } from 'react-icons/bs';
-import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+
+import { toast, Toaster } from 'react-hot-toast';
+import axios from 'axios';
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
-
+  const router =  useRouter();
+  const logout = async () => {
+    try {
+      await axios.get('/api/logout');
+      toast.success('Logout successful');
+      router.push('/');
+    } catch (error: any) {
+      console.log(error.message);
+      toast.error(error.message);
+    }
+  };
   return (
     <div>
       <div className="flex justify-between items-center bg-[#131a22] py-1 px-4">
@@ -61,13 +74,17 @@ function Navbar() {
         <div className="nav-class rounded-lg">
           <div className="flex flex-col justify-start items-left">
             <a href="/login" className="text-sm text-gray-200">
-              Hello, sign in
+              Login
             </a>
+            <p onClick={logout} className="text-sm text-gray-200">
+              Logout
+            </p>
             <p className="text-md text-gray-200 font-semibold">
               Accounts & Lists
             </p>
           </div>
         </div>
+
         <div className="nav-class rounded-lg">
           <div className="flex flex-col justify-start items-left">
             <p className="text-sm text-gray-200">Returns</p>
@@ -81,8 +98,11 @@ function Navbar() {
             <p className="text-md text-gray-200 font-semibold">& Orders</p>
           </div>
         </div>
-        
-        <div className="flex lg:hidden w-5 h-5 cursor-pointer text-white"  onClick={toggleNav}>
+
+        <div
+          className="flex lg:hidden w-5 h-5 cursor-pointer text-white"
+          onClick={toggleNav}
+        >
           {FiMenu}
         </div>
       </div>
