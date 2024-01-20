@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import { FiMenu } from 'react-icons/fi';
@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 
 import { toast, Toaster } from 'react-hot-toast';
 import axios from 'axios';
+import User from '@/utils/interfaces/user';
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -26,6 +27,30 @@ function Navbar() {
       toast.error(error.message);
     }
   };
+
+  const [user, setUser] = useState<User>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/api/profile`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        const data = await response.json();
+        setUser(data.data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
+  
   return (
     <div>
       <div className="flex justify-between items-center bg-[#131a22] py-1 px-4">
@@ -50,7 +75,6 @@ function Navbar() {
             type="text"
             className="bg-white overflow-auto w-full flex-shrink pl-4 py-2 outline-none"
             placeholder="Search Amazon"
-            // onChange={(e) => setUrl(e.target.value)}
           />
 
           <button className="py-3 px-4  rounded-r-sm bg-[#febd69] hover:opacity-90">
@@ -73,12 +97,17 @@ function Navbar() {
 
         <div className="nav-class rounded-lg">
           <div className="flex flex-col justify-start items-left">
+            {!user &&(
             <a href="/login">
               Login
-            </a>
+            </a>)
+            }
+            {user && (
             <p onClick={logout} >
               Logout
             </p>
+            )
+            }
             <a href='/profile' className='text-md font-semibold'>
               Accounts & Lists
             </a>
@@ -102,7 +131,7 @@ function Navbar() {
           className="flex lg:hidden w-5 h-5 cursor-pointer text-white"
           onClick={toggleNav}
         >
-          {FiMenu}
+          <FiMenu />
         </div>
       </div>
 
