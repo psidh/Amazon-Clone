@@ -29,7 +29,7 @@ export default function Login() {
       router.push('/');
     } catch (error: any) {
       toast.error('Email or Password seems to be incorrect. Please try again');
-      console.log('Login Failed');
+
       console.log(error);
     } finally {
       setLoading(false);
@@ -37,7 +37,7 @@ export default function Login() {
   };
 
   useEffect(() => {
-    if ( user.email.length > 0 && user.password.length > 0 ) {
+    if (user.email.length > 0 && user.password.length > 0) {
       setButtonDisabled(false);
     } else {
       setButtonDisabled(true);
@@ -47,11 +47,8 @@ export default function Login() {
   return (
     <div className="flex flex-col justify-center items-center h-screen">
       <div className="login">
-        {loading ? (
-          <h1 className="text-4xl my-8">Processing...</h1>
-        ) : (
-          <h1 className="text-4xl my-8">Login</h1>
-        )}
+        <Toaster />
+        <h1 className="text-4xl my-8">Login</h1>
 
         <label htmlFor="email" className="mb-2 font-semibold">
           Email

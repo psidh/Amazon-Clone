@@ -1,11 +1,12 @@
-'use client'
-import Secbar from '@/components/Secbar';
-import Slides from '@/components/Slider';
-import Gallery from '@/components/Gallery';
-import Multi from '@/components/Multi';
-import Button from '@/components/Button';
+'use client';
+import React from 'react';
+import Secbar from '../components/Secbar';
+import Slides from '../components/Slider';
+import Gallery from '../components/Gallery';
+import Multi from '../components/Multi';
+import Button from '../components/Button';
 
-const  Home = () => {
+const Home = () => {
   return (
     <div>
       <Secbar />
@@ -15,7 +16,6 @@ const  Home = () => {
       <Button />
     </div>
   );
-}
-
+};
 
 export default Home;
