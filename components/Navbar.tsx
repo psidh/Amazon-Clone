@@ -73,15 +73,15 @@ function Navbar() {
 
         <div className="nav-class rounded-lg">
           <div className="flex flex-col justify-start items-left">
-            <a href="/login" className="text-sm text-gray-200">
+            <a href="/login">
               Login
             </a>
-            <p onClick={logout} className="text-sm text-gray-200">
+            <p onClick={logout} >
               Logout
             </p>
-            <p className="text-md text-gray-200 font-semibold">
+            <a href='/profile' className='text-md font-semibold'>
               Accounts & Lists
-            </p>
+            </a>
           </div>
         </div>
 
@@ -95,7 +95,6 @@ function Navbar() {
         <div className="nav-class rounded-lg">
           <div className="flex justify-end items-end text-white">
             <BsCart className="text-3xl text-white mb-2" />
-            <p className="text-md text-gray-200 font-semibold">& Orders</p>
           </div>
         </div>
 
