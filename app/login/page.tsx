@@ -42,15 +42,15 @@ export default function Login() {
   }, [user]);
 
   return (
-    <div className="flex flex-col my-16 justify-center items-center h-screen">
-      <div className="flex flex-col border border-gray-300 py-4 px-8 rounded-lg 2xl w-[80%] md:w-[35%]">
+    <div className="flex flex-col justify-center items-center h-screen">
+      <div className="login">
         <h1 className="text-4xl my-8">Login</h1>
 
         <label htmlFor="email" className='mb-2 font-semibold'>
           Email
         </label>
         <input
-          className="p-2 border border-gray-300 rounded-md mb-6 focus:outline-none "
+          className="input"
           id="email"
           type="email"
           placeholder='Enter your email'
@@ -59,7 +59,7 @@ export default function Login() {
         />
         <label htmlFor="password" className='mb-2 font-semibold'>Password</label>
         <input
-          className="p-2 border border-gray-300 rounded-md mb-4 focus:outline-none "
+          className="input"
           id="password"
           type="password"
           placeholder='Enter your password'
@@ -71,8 +71,7 @@ export default function Login() {
 
         <button
           onClick={onLogin}
-          className="p-2 my-6 border rounded-xl transition duration-150 bg-[#FFD814]
-      "
+          className="auth"
         >
           Login
         </button>
