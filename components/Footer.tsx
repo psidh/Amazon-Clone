@@ -3,40 +3,40 @@ import Image from 'next/image';
 function Footer() {
   return (
     <div className="bg-[#131a22] text-gray-200">
-      <div className="grid  sm:grid-cols-1 sm:mx-4 sm:px-8 sm:py-10 md:grid-cols-2 md:mx-16 md:p-14 lg:grid-cols-4 lg:mx-32 lg:p-20 ">
-        <div className="flex flex-col justify-start items-start text-left m-4">
-          <p className="text-md font-semibold pb-2 ">Get to Know Us</p>
-          <p className="text-sm ">About Us</p>
-          <p className="text-sm ">Careers</p>
-          <p className="text-sm ">Press Releases</p>
-          <p className="text-sm ">Amazon Science</p>
+      <div className="grid sm:grid-cols-1 sm:mx-4 sm:px-8 sm:py-10 md:grid-cols-2 md:mx-16 md:p-14 lg:grid-cols-4 lg:mx-32 lg:p-20 ">
+        <div className="footer-link">
+          <h1 className="text-md font-semibold pb-2 ">Get to Know Us</h1>
+          <p>About Us</p>
+          <p>Careers</p>
+          <p>Press Releases</p>
+          <p>Amazon Science</p>
         </div>
 
-        <div className="flex flex-col justify-start items-start text-left m-4">
-          <p className="text-md font-semibold pb-2 ">Connect with Us</p>
-          <p className="text-sm ">Facebook</p>
-          <p className="text-sm ">Twitter</p>
-          <p className="text-sm ">Instagram</p>
+        <div className="footer-link">
+          <h1 className="text-md font-semibold pb-2 ">Connect with Us</h1>
+          <p>Facebook</p>
+          <p>Twitter</p>
+          <p>Instagram</p>
         </div>
 
-        <div className="flex flex-col justify-start items-start text-left m-4">
-          <p className="text-md font-semibold pb-2 ">Sell on Amazon</p>
-          <p className="text-sm ">Sell under Amazon Accelerator</p>
-          <p className="text-sm ">Protect and Build Your Brand</p>
-          <p className="text-sm ">Amazon Global Selling</p>
-          <p className="text-sm ">Become an Affiliate</p>
-          <p className="text-sm ">Fulfilment by Amazon</p>
-          <p className="text-sm ">Advertise Your Products</p>
+        <div className="footer-link">
+          <h1 className="text-md font-semibold pb-2 ">Sell on Amazon</h1>
+          <p>Sell under Amazon Accelerator</p>
+          <p>Protect and Build Your Brand</p>
+          <p>Amazon Global Selling</p>
+          <p>Become an Affiliate</p>
+          <p>Fulfilment by Amazon</p>
+          <p>Advertise Your Products</p>
         </div>
 
-        <div className="flex flex-col justify-start items-start text-left m-4">
-          <p className="text-md font-semibold pb-2 ">Let Us Help You</p>
-          <p className="text-sm ">COVID-19 and Amazon</p>
-          <p className="text-sm ">Your Account</p>
-          <p className="text-sm ">Returns Centre</p>
-          <p className="text-sm ">100% Purchase Protection</p>
-          <p className="text-sm ">Amazon App Download</p>
-          <p className="text-sm ">Help</p>
+        <div className="footer-link">
+          <h1 className="text-md font-semibold pb-2 ">Let Us Help You</h1>
+          <p>COVID-19 and Amazon</p>
+          <p>Your Account</p>
+          <p>Returns Centre</p>
+          <p>100% Purchase Protection</p>
+          <p>Amazon App Download</p>
+          <p>Help</p>
         </div>
       </div>
 

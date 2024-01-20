@@ -19,4 +19,11 @@
   .login{
     @apply flex flex-col border border-gray-300 py-4 px-8 rounded-lg w-[80%] md:w-[35%]
   }
+
+  .footer-link{
+    @apply flex flex-col justify-start items-start text-left m-4
+  }
+  .footer-link p{
+    @apply text-sm 
+  }
 }
