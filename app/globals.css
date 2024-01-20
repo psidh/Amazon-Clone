@@ -13,11 +13,11 @@
   }
 
   .input{
-    @apply p-2 border border-gray-300 rounded-md mb-6 focus:outline-none
+    @apply p-2 border border-gray-300 rounded-md mb-6 focus:outline-none w-full
   }
 
   .login{
-    @apply flex flex-col border border-gray-300 py-4 px-8 rounded-lg w-[80%] md:w-[35%]
+    @apply flex flex-col border border-gray-300 py-4 px-8 rounded-lg w-[80%] md:w-[50%]
   }
 
   .footer-link{

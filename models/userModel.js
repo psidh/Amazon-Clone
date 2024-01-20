@@ -1,5 +1,12 @@
 import mongoose from 'mongoose';
 const userSchema = new mongoose.Schema({
+  firstname: {
+    type: String,
+    required: [true, 'First Name is required.'],
+  },
+  lastname: {
+    type: String,
+  },
   email: {
     type: String,
     required: [true, 'Email is required.'],
@@ -10,6 +17,7 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Password is required.'],
   },
   address: {type: String},
+  pincode: {type: String},
   cart: [{
     product: {
       type: mongoose.Schema.Types.ObjectId,
