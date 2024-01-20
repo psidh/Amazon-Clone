@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function SignUp() {
   const router = useRouter();
@@ -26,6 +26,7 @@ export default function SignUp() {
       setLoading(true);
       const response = await axios.post('/api/signup', user);
       console.log('SignUp Success', response.data);
+      toast.success('SignUp successful');
       router.push('/login');
     } catch (error: any) {
       console.log('SignUp Failed');
@@ -55,11 +56,8 @@ export default function SignUp() {
   return (
     <div className="flex flex-col justify-center items-center h-screen">
       <div className="login">
-        {loading ? (
-          <h1 className="text-4xl my-8">Processing...</h1>
-        ) : (
-          <h1 className="text-4xl my-8">SignUp</h1>
-        )}
+        <Toaster />
+        <h1 className="text-4xl my-8">SignUp</h1>
         <div className="flex space-x-5 items-center">
           <div className="flex flex-col w-full">
             <label className="mb-2 font-semibold">First Name</label>

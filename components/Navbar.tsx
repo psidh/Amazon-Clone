@@ -6,17 +6,15 @@ import { FiMenu } from 'react-icons/fi';
 import { FaSearch } from 'react-icons/fa';
 import { BsCart } from 'react-icons/bs';
 import { useRouter } from 'next/navigation';
-
 import { toast, Toaster } from 'react-hot-toast';
 import axios from 'axios';
-import User from '@/utils/interfaces/user';
 function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
-  const router =  useRouter();
+  const router = useRouter();
   const logout = async () => {
     try {
       await axios.get('/api/logout');
@@ -28,7 +26,7 @@ function Navbar() {
     }
   };
 
-  const [user, setUser] = useState<User>();
+  const [user, setUser] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,10 +47,9 @@ function Navbar() {
     fetchData();
   }, []);
 
-
-  
   return (
     <div>
+      <Toaster />
       <div className="flex justify-between items-center bg-[#131a22] py-1 px-4">
         <a href="/">
           <Image src={'/amazon.png'} width={80} height={10} alt="amazon logo" />
@@ -97,18 +94,9 @@ function Navbar() {
 
         <div className="nav-class rounded-lg">
           <div className="flex flex-col justify-start items-left">
-            {!user &&(
-            <a href="/login">
-              Login
-            </a>)
-            }
-            {user && (
-            <p onClick={logout} >
-              Logout
-            </p>
-            )
-            }
-            <a href='/profile' className='text-md font-semibold'>
+            {!user && <a href="/login">Login</a>}
+            {user && <p onClick={logout}>Logout</p>}
+            <a href="/profile" className="text-md font-semibold">
               Accounts & Lists
             </a>
           </div>
