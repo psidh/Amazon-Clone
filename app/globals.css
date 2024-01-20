@@ -26,4 +26,8 @@
   .footer-link p{
     @apply text-sm 
   }
+
+  .nav-class{
+    @apply hidden lg:flex lg:justify-between items-end px-2 border cursor-pointer border-[#131a22] hover:border-white
+  }
 }
