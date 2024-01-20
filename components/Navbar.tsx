@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { FiMenu } from "react-icons/fi";
 import { FaSearch } from 'react-icons/fa';
 import { BsCart } from 'react-icons/bs';
 import { useState } from 'react';
@@ -16,12 +17,7 @@ function Navbar() {
     <div>
       <div className="flex justify-between items-center bg-[#131a22] py-1 px-4">
         <a href="/">
-          <Image
-            src={'/amazon.png'}
-            width={80}
-            height={10}
-            alt="amazon logo"
-          />
+          <Image src={'/amazon.png'} width={80} height={10} alt="amazon logo" />
         </a>
 
         <div className="nav-class rounded-lg">
@@ -33,17 +29,18 @@ function Navbar() {
         </div>
 
         <div className="flex justify-center w-1/2 items-center mx-2">
-          <button className="py-1 px-4 bg-gray-200 hover:bg-gray-300 rounded-l-sm text-black ">
+          <button className="py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-l-sm text-black ">
             All
           </button>
           <input
             id="search"
             type="text"
-            className="bg-white overflow-auto w-full flex-shrink pl-4 py-1 outline-none"
+            className="bg-white overflow-auto w-full flex-shrink pl-4 py-2 outline-none"
             placeholder="Search Amazon"
+            // onChange={(e) => setUrl(e.target.value)}
           />
 
-          <button className="py-2 px-4  rounded-r-sm bg-[#febd69] hover:opacity-90">
+          <button className="py-3 px-4  rounded-r-sm bg-[#febd69] hover:opacity-90">
             <FaSearch className="text-md text-black " />{' '}
           </button>
         </div>
@@ -63,7 +60,9 @@ function Navbar() {
 
         <div className="nav-class rounded-lg">
           <div className="flex flex-col justify-start items-left">
-            <a href='/login' className="text-sm text-gray-200">Hello, sign in</a>
+            <a href="/login" className="text-sm text-gray-200">
+              Hello, sign in
+            </a>
             <p className="text-md text-gray-200 font-semibold">
               Accounts & Lists
             </p>
@@ -82,29 +81,15 @@ function Navbar() {
             <p className="text-md text-gray-200 font-semibold">& Orders</p>
           </div>
         </div>
-
-        <svg
-          onClick={toggleNav} // Add onClick event to toggle navigation
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="flex lg:hidden w-5 h-5 cursor-pointer text-white" // Add cursor-pointer to indicate it's clickable
-        >
-          <line x1="3" y1="12" x2="21" y2="12" />
-          <line x1="3" y1="6" x2="21" y2="6" />
-          <line x1="3" y1="18" x2="21" y2="18" />
-        </svg>
+        
+        <div className="flex lg:hidden w-5 h-5 cursor-pointer text-white"  onClick={toggleNav}>
+          {FiMenu}
+        </div>
       </div>
 
       {isNavOpen && ( // Render the navigation links if isNavOpen is true
-        <div className="flex flex-col lg:hidden text-white">
-          <a className="text-[#131a22] m-6" href="/">
+        <div className="flex flex-col lg:hidden text-[#131a22]">
+          <a className=" m-6" href="/">
             Home
           </a>
           <a className="m-6" href="/#resume">
