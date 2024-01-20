@@ -61,10 +61,8 @@ export default function SignUp() {
           <h1 className="text-4xl my-8">SignUp</h1>
         )}
         <div className="flex space-x-5 items-center">
-          <div className='flex flex-col w-full'>
-            <label className="mb-2 font-semibold">
-              First Name
-            </label>
+          <div className="flex flex-col w-full">
+            <label className="mb-2 font-semibold">First Name</label>
             <input
               className="input"
               id="firstname"
@@ -77,10 +75,8 @@ export default function SignUp() {
             />
           </div>
 
-          <div className='flex flex-col w-full'>
-            <label  className="mb-2 font-semibold">
-              Last Name
-            </label>
+          <div className="flex flex-col w-full">
+            <label className="mb-2 font-semibold">Last Name</label>
             <input
               className="input"
               id="lastname"
@@ -93,12 +89,10 @@ export default function SignUp() {
             />
           </div>
         </div>
-        
+
         <div className="flex space-x-5 items-center">
-          <div className='flex flex-col w-full'>
-            <label className="mb-2 font-semibold">
-              Address
-            </label>
+          <div className="flex flex-col w-full">
+            <label className="mb-2 font-semibold">Address</label>
             <textarea
               className="input"
               id="address"
@@ -112,14 +106,12 @@ export default function SignUp() {
             />
           </div>
 
-          <div className='flex flex-col w-full'>
-            <label className="mb-2 font-semibold">
-              Pincode
-            </label>
+          <div className="flex flex-col w-full">
+            <label className="mb-2 font-semibold">Pincode</label>
             <input
               className="input"
               id="pincode"
-              type="number"
+              type="text"
               placeholder="Enter your pincode"
               value={user.pincode}
               onChange={(event) =>
@@ -128,7 +120,6 @@ export default function SignUp() {
             />
           </div>
         </div>
-        
 
         <label htmlFor="email" className="mb-2 font-semibold">
           Email

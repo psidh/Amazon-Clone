@@ -8,26 +8,47 @@
     hover:bg-gradient-to-b hover:from-yellow-500 hover:to-yellow-400  text-black text-center rounded-lg;
   }
 
-  .underlines{
-    @apply text-sm text-teal-600 hover:text-amber-500 cursor-pointer
+  .underlines {
+    @apply text-sm text-teal-600 hover:text-amber-500 cursor-pointer;
   }
 
-  .input{
-    @apply p-2 border border-gray-300 rounded-md mb-6 focus:outline-none w-full
+  .input {
+    @apply p-2 border border-gray-300 rounded-md mb-6 focus:outline-none w-full;
   }
 
-  .login{
-    @apply flex flex-col border border-gray-300 py-4 px-8 rounded-lg w-[80%] md:w-[50%]
+  .login {
+    @apply flex flex-col border border-gray-300 py-4 px-8 rounded-lg w-[80%] md:w-[50%];
   }
 
-  .footer-link{
-    @apply flex flex-col justify-start items-start text-left m-4
+  .footer-link {
+    @apply flex flex-col justify-start items-start text-left m-4;
   }
-  .footer-link p{
-    @apply text-sm 
+  .footer-link p {
+    @apply text-sm;
   }
 
-  .nav-class{
-    @apply hidden lg:flex lg:justify-between items-end px-2 border cursor-pointer border-[#131a22] hover:border-white
+  .nav-class {
+    @apply hidden lg:flex lg:justify-between items-end px-2 cursor-pointer border-[#131a22] border;
+  }
+
+  .nav-class p {
+    @apply hidden lg:flex lg:justify-between items-end px-2 cursor-pointer text-gray-200 border-[#131a22] hover:border-white border;
+  }
+
+  .nav-class a {
+    @apply hidden lg:flex lg:justify-between items-end px-2 cursor-pointer text-sm text-gray-200 border-[#131a22] hover:border-white border;
+  }
+
+
+  .profile-card .card {
+    @apply flex flex-col items-start  justify-start
+  }
+
+  .profile-card .card h1{
+    @apply font-bold text-xl 
+  }
+
+  .profile-card .card p{
+    @apply font-light text-lg 
   }
 }

@@ -36,17 +36,41 @@ export default function Profile() {
   }, []);
 
   return (
-    <section className="flex flex-col justify-center items-center h-screen">
-      {loading ? (
-        <p>Loading...</p>
-      ) : user ? (
-        <div>
-          <h1>Welcome</h1>
-          <p>Email: {user.email}</p>
-        </div>
-      ) : (
-        <p>Failed to load user data.</p>
-      )}
+    <section className="flex items-center justify-center h-screen">
+      <div className='w-[50%] p-6 '>
+        {loading ? (
+          <p className="text-lg font-semibold">Loading...</p>
+        ) : user ? (
+          <>
+          <h1 className='text-3xl font-semibold mb-6'>Your profile</h1>
+          <div className="profile-card rounded-lg border border-slate-200">
+            
+            <div className="card border-b p-4">
+              <h1>First Name</h1>
+              <p>{user.firstname}</p>
+            </div>
+            <div className="card border-b p-4">
+              <h1>Last Name</h1>
+              <p>{user.lastname}</p>
+            </div>
+            <div className="card border-b p-4">
+              <h1>Email</h1>
+              <p>{user.email}</p>
+            </div>
+            <div className="card border-b p-4">
+              <h1>Address</h1>
+              <p>{user.address}</p>
+            </div>
+            <div className="card border-b p-4">
+              <h1>Pincode</h1>
+              <p>{user['pincode']}</p>
+            </div>
+          </div>
+          </>
+        ) : (
+          <p className="text-lg font-semibold">Failed to load user data.</p>
+        )}
+      </div>
     </section>
   );
 }

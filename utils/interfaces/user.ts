@@ -1,14 +1,17 @@
 import { Document, Schema } from 'mongoose';
 
 interface User extends Document {
-  email: string;
-  password: string;
-  address?: string;
+  firstname: String;
+  lastname: String;
+  email: String;
+  password: String;
+  address: String;
+  pincode: String;
   cart: CartItem[];
   orders: OrderItem[];
-  forgotPasswordToken: string;
+  forgotPasswordToken: String;
   forgotPasswordTokenExpiry: Date;
-  verifyToken: string;
+  verifyToken: String;
   verifyTokenExpiry: Date;
 }
 
