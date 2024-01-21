@@ -5,14 +5,10 @@ import { toast, Toaster } from 'react-hot-toast';
 
 export default function Profile() {
   const [user, setUser] = useState<User>();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        toast.loading('Waiting...', {
-          duration: 2000,
-        });
         const response = await fetch(`/api/profile`, {
           method: 'GET',
           headers: {
@@ -27,13 +23,12 @@ export default function Profile() {
         }
 
         const data = await response.json();
-        console.log('Response:', data.data);
+        toast.dismiss(); // Dismiss the loading toast
         toast.success('Profile loaded successfully');
+        toast.dismiss(); // Dismiss the loading toast
         setUser(data.data);
       } catch (error) {
         console.error('Error:', error);
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -41,11 +36,15 @@ export default function Profile() {
   }, []);
 
   return (
-    <section className='flex items-center justify-center h-screen'>
+    <section className='flex items-center justify-center my-12'>
       <div className='w-[50%] p-6 '>
         <Toaster />
+
         {user ? (
           <>
+            <a href='/' className='text-lg text-teal-500 hover:text-amber-500'>
+              Home
+            </a>
             <h1 className='text-3xl font-semibold mb-6'>Your profile</h1>
             <div className='profile-card rounded-lg border border-slate-200'>
               <div className='card border-b p-4'>
@@ -71,7 +70,7 @@ export default function Profile() {
             </div>
           </>
         ) : (
-          <p className='text-lg font-semibold'>Failed to load user data.</p>
+          <p className='text-lg font-semibold'>Loading...</p>
         )}
       </div>
     </section>
