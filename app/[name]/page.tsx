@@ -73,7 +73,7 @@ export default function SearchResultsPage({ params }: { params: { name: string }
               <Image src={'/prime.png'} width={60} height={60} alt='Prime icon' className='mb-2' />
               <p className=''>FREE Delivery <span className='font-semibold'>{string}</span></p>
             </div>
-            <Link href={`/${params?.name}/${encodeURIComponent(String(result._id))}`}>
+            <Link href={`/${params?.name}/${encodeURIComponent(String(result?._id))}`}>
               <p>View Details</p>
             </Link>
           </section>

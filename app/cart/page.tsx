@@ -1,9 +1,10 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Product from '@/utils/interfaces/product';
 
 function Cart() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState<Array<Product>>([]); // Corrected the type here
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -23,7 +24,6 @@ function Cart() {
         }
 
         const data = await response.json();
-        console.log(data);
 
         setCart(data);
         const totalPrice = data.reduce((acc: any, item: any) => acc + item.price, 0);
@@ -79,6 +79,7 @@ function Cart() {
             <span className='font-semibold'>SubTotal ({cart.length} items):</span> ₹{total.toFixed(2)}{' '}
           </p>
           <button
+            onClick={() => alert('Order Placed')}
             className='w-full py-1 my-2 bg-yellow-400 hover:bg-yellow-500 rounded-lg
       shadow-md'
           >
