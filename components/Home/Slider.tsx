@@ -10,35 +10,35 @@ interface SlideProps {
 }
 
 const Slide: React.FC<SlideProps> = ({ image }) => (
-  <div className="">
-    <img src={image} alt='Photos' className='w-auto h-auto'/>
+  <div className=''>
+    <img src={image} alt='Photos' className='w-auto h-auto' />
   </div>
 );
 
 const Slides: React.FC = () => {
   const slidesData = [
     {
-      image: "/slide/1.png"
+      image: '/slide/1.png',
     },
     {
-      image: "/slide/2.png"
+      image: '/slide/2.png',
     },
     {
-      image: "/slide/3.png"
+      image: '/slide/3.png',
     },
     {
-      image: "/slide/4.png"
+      image: '/slide/4.png',
     },
   ];
   const CustomNextArrow: React.FC<any> = (props) => (
     <div {...props}>
-      <FaChevronRight className="text-3xl text-white" />
+      <FaChevronRight className='text-3xl text-white' />
     </div>
   );
 
   const CustomPrevArrow: React.FC<any> = (props) => (
     <div {...props}>
-      <FaChevronLeft className="text-3xl text-white" />
+      <FaChevronLeft className='text-3xl text-white' />
     </div>
   );
 
@@ -53,15 +53,12 @@ const Slides: React.FC = () => {
     autoplaySpeed: 1400,
   };
 
-  
-
   return (
     <Slider {...settings}>
       {slidesData.map((slide, index) => (
         <div key={index}>
           <Slide image={slide.image} />
         </div>
-
       ))}
     </Slider>
   );

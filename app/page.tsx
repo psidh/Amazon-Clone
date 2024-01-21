@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
-import Secbar from '../components/Secbar';
-import Slides from '../components/Slider';
-import Gallery from '../components/Gallery';
-import Multi from '../components/Multi';
-import Button from '../components/Button';
+import Secbar from '../components/Home/Secbar';
+import Slides from '../components/Home/Slider';
+import Gallery from '../components/Home/Gallery';
+import Multi from '../components/Home/Multi';
+import Button from '../components/Home/Button';
 
 const Home = () => {
   return (

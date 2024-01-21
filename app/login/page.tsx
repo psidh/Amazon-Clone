@@ -25,11 +25,9 @@ export default function Login() {
       });
       const response = await axios.post('/api/login', user);
       toast.success('Login Successful');
-      console.log('Login Success', response.data);
       router.push('/');
     } catch (error: any) {
       toast.error('Email or Password seems to be incorrect. Please try again');
-
       console.log(error);
     } finally {
       setLoading(false);
@@ -45,40 +43,40 @@ export default function Login() {
   }, [user]);
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
-      <div className="login">
+    <div className='flex flex-col justify-center items-center h-screen'>
+      <div className='login'>
         <Toaster />
-        <h1 className="text-4xl my-8">Login</h1>
+        <h1 className='text-4xl my-8'>Login</h1>
 
-        <label htmlFor="email" className="mb-2 font-semibold">
+        <label htmlFor='email' className='mb-2 font-semibold'>
           Email
         </label>
         <input
-          className="input"
-          id="email"
-          type="email"
-          placeholder="Enter your email"
+          className='input'
+          id='email'
+          type='email'
+          placeholder='Enter your email'
           value={user.email}
           onChange={(event) => setUser({ ...user, email: event.target.value })}
         />
 
-        <label htmlFor="password" className="mb-2 font-semibold">
+        <label htmlFor='password' className='mb-2 font-semibold'>
           Password
         </label>
         <input
-          className="input"
-          id="password"
-          type="password"
-          placeholder="Enter your password"
+          className='input'
+          id='password'
+          type='password'
+          placeholder='Enter your password'
           value={user.password}
           onChange={(event) =>
             setUser({ ...user, password: event.target.value })
           }
         />
         {buttonDisabled ? (
-          <div className="flex flex-col">
+          <div className='flex flex-col'>
             <button
-              className="my-2 px-12 py-1 border text-gray-300 w-full bg-gray-500 rounded-lg"
+              className='my-2 px-12 py-1 border text-gray-300 w-full bg-gray-500 rounded-lg'
               disabled
             >
               Login
@@ -86,8 +84,8 @@ export default function Login() {
             <Link href={'/signup'}>New User? SignUp</Link>
           </div>
         ) : (
-          <div className="flex flex-col">
-            <button onClick={onLogin} className="auth">
+          <div className='flex flex-col'>
+            <button onClick={onLogin} className='auth'>
               Login
             </button>
             <Link href={'/signup'}>New User? SignUp</Link>
