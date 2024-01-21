@@ -54,7 +54,7 @@ export default function SignUp() {
   }, [user, password2]);
 
   return (
-    <div className='flex flex-col justify-center items-center h-screen'>
+    <div className='flex flex-col justify-center items-center h-screen my-24'>
       <div className='login'>
         <Toaster />
         <h1 className='text-4xl my-8'>SignUp</h1>

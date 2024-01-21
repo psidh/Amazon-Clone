@@ -25,11 +25,9 @@ export default function Login() {
       });
       const response = await axios.post('/api/login', user);
       toast.success('Login Successful');
-      console.log('Login Success', response.data);
       router.push('/');
     } catch (error: any) {
       toast.error('Email or Password seems to be incorrect. Please try again');
-
       console.log(error);
     } finally {
       setLoading(false);

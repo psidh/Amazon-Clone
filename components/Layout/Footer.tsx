@@ -3,7 +3,7 @@ import Image from 'next/image';
 function Footer() {
   return (
     <div className='bg-[#131a22] text-gray-200'>
-      <div className='grid sm:grid-cols-1 sm:mx-4 sm:px-8 sm:py-10 md:grid-cols-2 md:mx-16 md:p-14 lg:grid-cols-4 lg:mx-32 lg:p-20 '>
+      <div className='footer-grid'>
         <div className='footer-link'>
           <h1 className='text-md font-semibold pb-2 '>Get to Know Us</h1>
           <p>About Us</p>

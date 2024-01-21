@@ -27,9 +27,6 @@ function page() {
   const router = useRouter();
 
   const handleAddToCart = () => {
-    // Add logic here to handle adding the item to the cart
-
-    // Redirect to the /cart page
     router.push('/cart');
   };
   return (

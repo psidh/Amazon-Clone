@@ -20,6 +20,12 @@
     @apply flex flex-col border border-gray-300 py-4 px-8 rounded-lg w-[80%] md:w-[50%];
   }
 
+  .footer-grid{
+
+    @apply grid sm:grid-cols-1 sm:mx-4 sm:px-8 sm:py-10 md:grid-cols-2 md:mx-16 md:p-14 lg:grid-cols-4 lg:mx-32 lg:p-20 
+
+  }
+
   .footer-link {
     @apply flex flex-col justify-start items-start text-left m-4;
   }
