@@ -1,4 +1,5 @@
 interface Product {
+  _id(_id: any): unknown;
   name: string;
   description: string;
   price: number;
@@ -6,6 +7,7 @@ interface Product {
   brand: string;
   image: string;
   quantity: number;
+  rating: number;
 }
 
 export default Product;

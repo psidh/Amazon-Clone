@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Product from '@/utils/interfaces/product';
+import Link from 'next/link';
 
 // Initialize productProps as an empty object
 const productProps = {
@@ -18,21 +19,17 @@ const productProps = {
 };
 
 // Define the page component
-export default function SearchResultsPage({ params }: { params: { id: string } }) {
+export default function SearchResultsPage({ params }: { params: { name: string } }) {
 
   const [searchResults, setSearchResults] = useState<Array<Product>>([]);
   const router = useRouter();
   const string = getDate();
-  // console.log("Params: ",params.id);
-
-  // const encodedQuery = encodeURIComponent(params.toString());
-  // console.log(encodedQuery);
   
 
   useEffect(() => {
     try {
       const fetchData = async () => {
-        const response = await fetch(`/api/search?query=${params?.id}`, {
+        const response = await fetch(`/api/search?query=${params?.name}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -63,9 +60,10 @@ export default function SearchResultsPage({ params }: { params: { id: string } }
       <div className='grid sm:grid-cols-2'>
         {searchResults.map((result) => (
           <section key={result.name} className='flex justify-items-start bg-gray-100 rounded-lg p-4 m-4'>
-            {/* <div>
-              <Image src={result.image} width={240} height={240} alt='Product Image' className='rounded-lg mr-4' />
-            </div> */}
+            
+            <div>
+              <Image src={`${result.image}`} width={140} height={140} alt='Product Image' className='rounded-lg mr-4' />
+            </div>
             <div className='flex flex-col items-start'>
               <h1 className='text-2xl mv-4'>{result.name}</h1>
               <p className='text-xl font-semibold mb-2'>
@@ -75,6 +73,9 @@ export default function SearchResultsPage({ params }: { params: { id: string } }
               <Image src={'/prime.png'} width={60} height={60} alt='Prime icon' className='mb-2' />
               <p className=''>FREE Delivery <span className='font-semibold'>{string}</span></p>
             </div>
+            <Link href={`/${params?.name}/${encodeURIComponent(String(result?._id))}`}>
+              <p>View Details</p>
+            </Link>
           </section>
         ))}
       </div>
