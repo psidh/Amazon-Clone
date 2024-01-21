@@ -3,33 +3,35 @@ import { NextRequest, NextResponse } from 'next/server';
 import User from '@/models/userModel';
 import Product from '@/models/productModel';
 
-export async function POST(request: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
     const userID = await getDataFromToken(request);
 
-    if(userID) {
-      const reqBody = await request.json();
-      
-      const productID  = reqBody._id;
-      const user = await User.findOne({_id: userID });
-      const product = await Product.findOne({_id: productID });
-      console.log(productID);
-      
-      if(user && product) {
-        const cartItem = {
-          product: product._id,
-          // quantity: quantity,
-        };
-        user.cart.push(cartItem);
-        await user.save();
-        return NextResponse.json({ message: 'Product added to cart' }, { status: 200 });      
-      } else{
-        return NextResponse.json({ message: 'maybe userid and product id are different' }, { status: 500 });
-      }
-      
-    }else{
-      return NextResponse.json({ message: 'Session Expired, Login Again' }, { status: 404 });
+    if (userID) {
+      const user = await User.findOne({ _id: userID });
 
+      const cartItems = user?.cart;
+      console.log(cartItems);
+      
+
+      if (cartItems && cartItems.length > 0) {
+        // Extract product IDs from cartItems
+        const productIDs = cartItems.map((item:any) => item.product);
+
+        // Retrieve product details using the IDs
+        const products = await Product.find({ _id: { $in: productIDs } });
+
+        console.log(products);
+
+        return NextResponse.json(products);
+      } else {
+        return NextResponse.json({ message: 'Cart is empty' }, { status: 200 });
+      }
+    } else {
+      return NextResponse.json(
+        { message: 'user or product does not exist' },
+        { status: 500 }
+      );
     }
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });

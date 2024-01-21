@@ -6,9 +6,6 @@ interface LogoutAccountsProps {
 }
 
 const LogoutAccounts: React.FC<LogoutAccountsProps> = ({ handleLogout }) => {
-  
-
-
   return (
     <div>
       <div className='nav-class rounded-lg'>

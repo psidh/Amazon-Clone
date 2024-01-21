@@ -42,7 +42,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
 
   const handleAddToCart = async() => {
     try {
-        const response = await fetch('/api/cart', {
+        const response = await fetch('/api/addtocart', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -1,6 +1,41 @@
+'use client';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+
 function Cart() {
+
+  const [cart, setCart] = useState([])
+  const [total, setTotal] = useState(0)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/api/cart`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          console.error('Server error:', response);
+          console.error('Failed to fetch data from the server');
+          return;
+        }
+
+        const data = await response.json();
+        console.log(data);
+        
+        setCart(data);
+      } catch (error) {
+        console.error('Client error:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  
   return (
     <div className='bg-gray-100 h-screen'>
       <div className='flex flex-col lg:flex-row justify-between'>
