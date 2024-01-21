@@ -32,25 +32,25 @@ const Gallery: React.FC = () => {
   const cardData = [
     {
       title: 'Great Indian Festival',
-      image: '/p1.jpg',
+      image: '/home-page/grid5/p1.jpg',
       description: 'See all offers',
       link: '/',
     },
     {
       title: 'iPhone 15',
-      image: '/iPhone.jpeg',
+      image: '/products/iPhone.jpeg',
       description: 'See all offers',
       link: '/sample-iphone',
     },
     {
       title: 'Sports at ₹499',
-      image: '/p3.jpg',
+      image: '/home-page/grid5/p3.jpg',
       description: 'See all offers',
       link: '/',
     },
     {
       title: 'Gym Equipment',
-      image: '/p4.jpg',
+      image: '/home-page/grid5/p4.jpg',
       description: 'See all offers',
       link: '/',
     },

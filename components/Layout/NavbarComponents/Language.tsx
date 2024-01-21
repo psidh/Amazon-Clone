@@ -4,7 +4,7 @@ export default function Language() {
     <div>
       <div className='nav-class'>
         <Image
-          src={'/india.svg'}
+          src={'/amazon-icons/india.svg'}
           width={20}
           height={20}
           alt='amazon logo'
