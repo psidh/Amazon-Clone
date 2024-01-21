@@ -7,14 +7,14 @@ connect();
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
-    const {firstname, lastname, email, password, address, pincode } = reqBody;
+    const { firstname, lastname, email, password, address, pincode } = reqBody;
 
     // console.log(reqBody);
 
     //check if user already exists
     const user = await User.findOne({ email });
 
-    if(user) {
+    if (user) {
       return NextResponse.json(
         { error: 'User already exists please login' },
         { status: 400 }
@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 
     const newUser = new User({
       firstname,
-      lastname, 
+      lastname,
       email,
       password: hashedPassword,
       address,
@@ -45,7 +45,6 @@ export async function POST(request: NextRequest) {
       success: true,
       savedUser,
     });
-    
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

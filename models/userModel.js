@@ -16,31 +16,35 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Password is required.'],
   },
-  address: {type: String},
-  pincode: {type: String},
-  cart: [{
-    product: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Product',
+  address: { type: String },
+  pincode: { type: String },
+  cart: [
+    {
+      product: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product',
+      },
+      quantity: {
+        type: Number,
+        default: 0,
+      },
     },
-    quantity: {
-      type: Number,
-      default: 0,
+  ],
+  orders: [
+    {
+      product: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product',
+      },
+      quantity: {
+        type: Number,
+        default: 0,
+      },
     },
-  }],
-  orders: [{
-    product: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Product',
-    },
-    quantity: {
-      type: Number,
-      default: 0,
-    },
-  }],
+  ],
   forgotPasswordToken: {
     type: String,
-    default: '', 
+    default: '',
   },
   forgotPasswordTokenExpiry: {
     type: Date,
@@ -54,6 +58,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.models.users || mongoose.model("users", userSchema);
+const User = mongoose.models.users || mongoose.model('users', userSchema);
 
 export default User;

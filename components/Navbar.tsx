@@ -26,19 +26,19 @@ function Navbar() {
     }
   };
 
-  const [user, setUser] = useState();
+  const [user, setUser] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`/api/profile`, {
+        const response = await fetch(`/api/me`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         });
         const data = await response.json();
-        setUser(data.data);
+        setUser(data.message);
       } catch (error) {
         console.error('Error:', error);
       }
@@ -50,73 +50,73 @@ function Navbar() {
   return (
     <div>
       <Toaster />
-      <div className="flex justify-between items-center bg-[#131a22] py-1 px-4">
-        <a href="/">
-          <Image src={'/amazon.png'} width={80} height={10} alt="amazon logo" />
+      <div className='flex justify-between items-center bg-[#131a22] py-1 px-4'>
+        <a href='/'>
+          <Image src={'/amazon.png'} width={80} height={10} alt='amazon logo' />
         </a>
 
-        <div className="nav-class rounded-lg">
-          <HiOutlineLocationMarker className="text-md text-white" />
-          <div className="flex flex-col justify-start items-left px-2">
-            <p className="text-sm text-gray-500">Deliver to</p>
-            <p className="text-md font-semibold text-gray-200">India</p>
+        <div className='nav-class rounded-lg'>
+          <HiOutlineLocationMarker className='text-md text-white' />
+          <div className='flex flex-col justify-start items-left px-2'>
+            <p className='text-sm text-gray-500'>Deliver to</p>
+            <p className='text-md font-semibold text-gray-200'>India</p>
           </div>
         </div>
 
-        <div className="flex justify-center w-1/2 items-center mx-2">
-          <button className="py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-l-sm text-black ">
+        <div className='flex justify-center w-1/2 items-center mx-2'>
+          <button className='py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-l-sm text-black '>
             All
           </button>
           <input
-            id="search"
-            type="text"
-            className="bg-white overflow-auto w-full flex-shrink pl-4 py-2 outline-none"
-            placeholder="Search Amazon"
+            id='search'
+            type='text'
+            className='bg-white overflow-auto w-full flex-shrink pl-4 py-2 outline-none'
+            placeholder='Search Amazon'
           />
 
-          <button className="py-3 px-4  rounded-r-sm bg-[#febd69] hover:opacity-90">
-            <FaSearch className="text-md text-black " />{' '}
+          <button className='py-3 px-4  rounded-r-sm bg-[#febd69] hover:opacity-90'>
+            <FaSearch className='text-md text-black ' />{' '}
           </button>
         </div>
 
-        <div className="nav-class">
+        <div className='nav-class'>
           <Image
             src={'/india.svg'}
             width={20}
             height={20}
-            alt="amazon logo"
-            className="mb-1 mr-1"
+            alt='amazon logo'
+            className='mb-1 mr-1'
           ></Image>
-          <div className="flex flex-col justify-start items-left">
-            <p className="text-sm text-gray-200">Hindi</p>
+          <div className='flex flex-col justify-start items-left'>
+            <p className='text-sm text-gray-200'>Hindi</p>
           </div>
         </div>
 
-        <div className="nav-class rounded-lg">
-          <div className="flex flex-col justify-start items-left">
-            {!user && <a href="/login">Login</a>}
-            {user && <p onClick={logout}>Logout</p>}
-            <a href="/profile" className="text-md font-semibold">
+        <div className='nav-class rounded-lg'>
+          <div className='flex flex-col justify-start items-left'>
+            {user === 'User not found' && <a href='/login'>Login</a>}
+            {user === 'User found' && <p onClick={logout}>Logout</p>}
+            <a href='/profile' className='text-md font-semibold'>
               Accounts & Lists
             </a>
           </div>
         </div>
 
-        <div className="nav-class rounded-lg">
-          <div className="flex flex-col justify-start items-left">
-            <p className="text-sm text-gray-200">Returns</p>
-            <p className="text-md text-gray-200 font-semibold">& Orders</p>
+        <div className='nav-class rounded-lg'>
+          <div className='flex flex-col justify-start items-left'>
+            <p className='text-sm text-gray-200'>Returns</p>
+            <p className='text-md text-gray-200 font-semibold'>& Orders</p>
           </div>
         </div>
 
-        <div className="nav-class rounded-lg">
-          <div className="flex justify-end items-end text-white">
-            <BsCart className="text-3xl text-white mb-2" />
+        <div className='nav-class rounded-lg'>
+          <div className='flex justify-end items-end text-white'>
+            <BsCart className='text-3xl text-white mb-2' />
           </div>
         </div>
 
         <div
-          className="flex lg:hidden w-5 h-5 cursor-pointer text-white"
+          className='flex lg:hidden w-5 h-5 cursor-pointer text-white'
           onClick={toggleNav}
         >
           <FiMenu />
@@ -124,20 +124,20 @@ function Navbar() {
       </div>
 
       {isNavOpen && ( // Render the navigation links if isNavOpen is true
-        <div className="flex flex-col lg:hidden text-[#131a22]">
-          <a className=" m-6" href="/">
+        <div className='flex flex-col lg:hidden text-[#131a22]'>
+          <a className=' m-6' href='/'>
             Home
           </a>
-          <a className="m-6" href="/#resume">
+          <a className='m-6' href='/#resume'>
             Location
           </a>
-          <a className="m-6" href="/#blog">
+          <a className='m-6' href='/#blog'>
             Accounts & Lists
           </a>
-          <a className="m-6" href="/#footer">
+          <a className='m-6' href='/#footer'>
             Returns & Orders
           </a>
-          <a className="m-6" href="/#footer">
+          <a className='m-6' href='/#footer'>
             Cart
           </a>
         </div>

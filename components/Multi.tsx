@@ -6,14 +6,23 @@ interface CardProps {
   description: string;
 }
 
-const InformationCard: React.FC<CardProps> = ({ title, images, description }) => (
-  <div className="border p-4 m-2">
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-sm text-gray-600">{description}</p>
+const InformationCard: React.FC<CardProps> = ({
+  title,
+  images,
+  description,
+}) => (
+  <div className='border p-4 m-2'>
+    <h3 className='text-xl font-semibold mb-2'>{title}</h3>
+    <p className='text-sm text-gray-600'>{description}</p>
 
-    <div className="grid grid-cols-2 gap-2 mt-4">
+    <div className='grid grid-cols-2 gap-2 mt-4'>
       {images.map((image, index) => (
-        <img key={index} src={image} alt={`${title}-Image-${index}`} className="w-full h-full object-cover mb-2" />
+        <img
+          key={index}
+          src={image}
+          alt={`${title}-Image-${index}`}
+          className='w-full h-full object-cover mb-2'
+        />
       ))}
     </div>
   </div>
@@ -46,10 +55,14 @@ const Multi: React.FC = () => {
 
   return (
     <div>
-      <div className="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6">
+      <div className='grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-6'>
         {cardData.map((card, index) => (
           <div key={index}>
-            <InformationCard title={card.title} images={card.images} description={card.description} />
+            <InformationCard
+              title={card.title}
+              images={card.images}
+              description={card.description}
+            />
           </div>
         ))}
       </div>
