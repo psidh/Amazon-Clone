@@ -2,11 +2,9 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-
 function Cart() {
-
-  const [cart, setCart] = useState([])
-  const [total, setTotal] = useState(0)
+  const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +24,7 @@ function Cart() {
 
         const data = await response.json();
         console.log(data);
-        
+
         setCart(data);
       } catch (error) {
         console.error('Client error:', error);
@@ -35,7 +33,7 @@ function Cart() {
 
     fetchData();
   }, []);
-  
+
   return (
     <div className='bg-gray-100 h-screen'>
       <div className='flex flex-col lg:flex-row justify-between'>
@@ -54,7 +52,12 @@ function Cart() {
             <div className='flex flex-col justify-start items-start mx-4'>
               <h1>Apple iPhone 15</h1>
               <p className='text-xl font-bold'>₹89,900.00</p>
-              <Image src={'/prime.png'} width={50} height={50} alt='prime' />
+              <Image
+                src={'/amazon-icons/prime.png'}
+                width={50}
+                height={50}
+                alt='prime'
+              />
               <p>
                 {' '}
                 <span className='font-semibold'>Colour:</span>Black

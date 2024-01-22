@@ -10,22 +10,17 @@ export async function GET(request: NextRequest) {
     if (userID) {
       const user = await User.findOne({ _id: userID });
 
-      const cartItems = user?.cart;
-
+      const orderItems = user?.orders;
       
+      if (orderItems && orderItems.length > 0) {
+        const productIDs = orderItems.map((item:any) => item.product);
 
-      if (cartItems && cartItems.length > 0) {
-        // Extract product IDs from cartItems
-        const productIDs = cartItems.map((item:any) => item.product);
-
-        // Retrieve product details using the IDs
         const products = await Product.find({ _id: { $in: productIDs } });
-
 
 
         return NextResponse.json(products);
       } else {
-        return NextResponse.json({ message: 'Cart is empty' }, { status: 200 });
+        return NextResponse.json({ message: 'No orders' }, { status: 200 });
       }
     } else {
       return NextResponse.json(
