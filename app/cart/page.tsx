@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Product from '@/utils/interfaces/product';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import {toast,Toaster} from 'react-hot-toast';
+import { toast, Toaster } from 'react-hot-toast';
 
 function Cart() {
   const [cart, setCart] = useState<Array<Product>>([]);
@@ -46,9 +46,8 @@ function Cart() {
   const handleOrder = async () => {
     try {
       const response = await axios.post('/api/buy', cart);
-      toast.success('Login Successful');
-      router.push('/success');
-
+      toast.success('Ordered Successfully');
+      router.push('/cart/success');
     } catch (error: any) {
       console.log(error.message);
     }
@@ -67,29 +66,26 @@ function Cart() {
           <hr />
           {Array.isArray(cart) && cart.length > 0 ? (
             cart.map((item) => (
-              <div className='flex  justify-between items-center mt-4 '>
+              <div className='flex  justify-between items-center '>
                 <Image
                   src={`${item.image}`}
-                  width={120}
-                  height={120}
-                  alt='iPhone Image'
-                  className='mx-4'
+                  width={140}
+                  height={140}
+                  alt='Item Image'
+                  className='mx-2'
                 />
 
-                <div className='flex flex-col justify-start items-start mx-4'>
-                  <h1>{item.name}</h1>
-                  <p className='text-xl font-bold'>₹{item.price}</p>
+                <div className='flex flex-col justify-between items-start mr-4'>
+                  <h1 className='text-xl font-semibold'>{item.name}</h1>
+                  <p className='text-lg'>{item.description}</p>
+                  <p className='text-sm'>{item.category}</p>
+                  <p className='text-xl font-semibold'>₹{item.price}</p>
                   <Image
-                    src={'/prime.png'}
+                    src={'/amazon-icons/prime.png'}
                     width={50}
                     height={50}
                     alt='prime'
                   />
-                  <p>
-                    {' '}
-                    <span className='font-semibold'>Size:</span>1TB
-                  </p>
-                  <hr />
                 </div>
               </div>
             ))

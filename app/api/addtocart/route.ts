@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
       const productID  = reqBody._id;
       const user = await User.findOne({_id: userID });
       const product = await Product.findOne({_id: productID });
-      console.log(productID);
+
       
       if(user && product) {
         const cartItem = {
