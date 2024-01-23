@@ -8,7 +8,7 @@ export default function Search() {
 
   const router = useRouter();
   const handleSearch = () => {
-    router.push(`/${searchQuery}`);
+    router.push(`/search/${searchQuery}`);
   };
 
   return (

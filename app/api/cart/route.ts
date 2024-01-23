@@ -12,16 +12,12 @@ export async function GET(request: NextRequest) {
 
       const cartItems = user?.cart;
 
-      
-
       if (cartItems && cartItems.length > 0) {
         // Extract product IDs from cartItems
-        const productIDs = cartItems.map((item:any) => item.product);
+        const productIDs = cartItems.map((item: any) => item.product);
 
         // Retrieve product details using the IDs
         const products = await Product.find({ _id: { $in: productIDs } });
-
-
 
         return NextResponse.json(products);
       } else {

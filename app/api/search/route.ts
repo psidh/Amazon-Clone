@@ -18,7 +18,11 @@ export async function GET(request: NextRequest) {
       ],
     });
 
-    return NextResponse.json(data);
+    if(data){
+      return NextResponse.json(data);
+    } else {
+      return NextResponse.json({ error: "No results found" }, { status: 404 });
+    }
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }

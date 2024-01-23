@@ -34,7 +34,7 @@
   }
 
   .nav-class {
-    @apply hidden lg:flex lg:justify-between items-end px-2 cursor-pointer border-[#131a22] border;
+    @apply hidden lg:flex lg:justify-between items-center px-2 cursor-pointer border-[#131a22] border;
   }
 
   .nav-class p {

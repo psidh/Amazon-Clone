@@ -32,7 +32,7 @@ export default function page() {
   }, []);
 
   return (
-    <div className='bg-gray-100 h-screen'>
+    <div className='bg-gray-100'>
       <div className='flex flex-col lg:flex-row justify-between'>
         <div className='flex flex-col w-full lg:w-4/5  items-start my-8 md:mx-16 p-4 border rounded-md bg-white '>
           <h1 className='text-4xl m-4'>Orders</h1>

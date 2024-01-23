@@ -57,7 +57,7 @@ export default function SearchResultsPage({
   }, []);
 
   return (
-    <div className='h-screen'>
+    <div>
       <h1 className='text-2xl font-bold m-16'>Search Results</h1>
       <div className='flex flex-col justify-between items-center'>
         {searchResults.map((result) => (
@@ -92,7 +92,7 @@ export default function SearchResultsPage({
                 FREE Delivery <span className='font-semibold'> {` ${string[0][0]} ${string[0][1]}`} </span>
               </p>
               <Link
-              href={`/${params?.name}/${encodeURIComponent(
+              href={`/search/${params?.name}/${encodeURIComponent(
                 String(result?._id)
               )}`}
             >
