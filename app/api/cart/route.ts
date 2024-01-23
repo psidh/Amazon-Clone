@@ -1,7 +1,10 @@
+import {connect} from "@/dbConfig/dbConfig"
 import { getDataFromToken } from '@/helpers/getDataFromToken';
 import { NextRequest, NextResponse } from 'next/server';
 import User from '@/models/userModel';
 import Product from '@/models/productModel';
+
+connect();
 
 export async function GET(request: NextRequest) {
   try {

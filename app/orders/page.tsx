@@ -21,7 +21,8 @@ export default function page() {
         }
 
         const data = await response.json();
-
+        // console.log(data[0].product);
+        
         setOrders(data);
       } catch (error) {
         console.error('Client error:', error);
@@ -37,9 +38,9 @@ export default function page() {
         <div className='flex flex-col w-full lg:w-4/5  items-start my-8 md:mx-16 p-4 border rounded-md bg-white '>
           <h1 className='text-4xl m-4'>Orders</h1>
           {orders.map((order) => (
-            <div key={order.id} className='flex my-6 justify-between items-center '>
+            <div key={order.product.id} className='flex my-6 justify-between items-center '>
               <Image
-                src={`${order.image}`}
+                src={order.product.image}
                 width={140}
                 height={140}
                 alt='Order Image'
@@ -47,10 +48,10 @@ export default function page() {
               />
 
               <div className='flex flex-col justify-between items-start mr-4'>
-                <h1 className='text-xl font-semibold'>{order.name}</h1>
-                <p className='text-lg'>{order.description}</p>
-                <p className='text-sm'>{order.category}</p>
-                <p className='text-xl font-semibold'>₹{order.price}</p>
+                <h1 className='text-xl font-semibold'>{order.product.name}</h1>
+                <p className='text-lg'>{order.product.description}</p>
+                <p className='text-sm'>{order.product.category}</p>
+                <p className='text-xl font-semibold'>₹{order.product.price}</p>
                 <Image
                   src={'/amazon-icons/prime.png'}
                   width={50}

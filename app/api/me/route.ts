@@ -1,6 +1,8 @@
+import {connect} from "@/dbConfig/dbConfig"
 import { getDataFromToken } from '@/helpers/getDataFromToken';
 import { NextRequest, NextResponse } from 'next/server';
 
+connect();
 export async function GET(request: NextRequest) {
   try {
     const userID = await getDataFromToken(request);
