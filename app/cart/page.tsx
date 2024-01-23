@@ -54,7 +54,7 @@ function Cart() {
   };
 
   return (
-    <div className='bg-gray-100 h-screen'>
+    <div className='bg-gray-100 '>
       <Toaster />
       <div className='flex flex-col lg:flex-row justify-between'>
         <div className='flex flex-col w-full lg:w-4/5  items-start my-8 md:mx-16 p-4 border rounded-md bg-white '>

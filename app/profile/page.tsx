@@ -70,7 +70,7 @@ export default function Profile() {
             </div>
           </>
         ) : (
-          <p className='text-lg font-semibold'>Loading...</p>
+          <p className='flex flex-col justify-center items-center h-screen text-lg font-semibold'>Loading...</p>
         )}
       </div>
     </section>
