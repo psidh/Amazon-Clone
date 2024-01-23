@@ -8,15 +8,20 @@ export default function Search() {
 
   const router = useRouter();
   const handleSearch = () => {
+    console.log('searching');
+    
     router.push(`/search/${searchQuery}`);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
   };
 
   return (
     <div className='w-[70%] py-2 flex justify-center items-center mx-2'>
-      <button
-        className='py-3 px-4 bg-gray-200 hover:bg-gray-300 rounded-l-sm text-black'
-        onClick={handleSearch}
-      >
+      <button className='py-3 px-4 bg-gray-200 hover:bg-gray-300 rounded-l-sm text-black'>
         All
       </button>
       <input
@@ -26,6 +31,7 @@ export default function Search() {
         placeholder='Search Amazon'
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        onKeyDown={handleKeyPress}
       />
 
       <button
