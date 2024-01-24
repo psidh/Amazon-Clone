@@ -38,7 +38,7 @@ export default function Login() {
   }, [user]);
 
   return (
-    <div className='flex flex-col justify-center items-center my-24'>
+    <div className='flex flex-col justify-center items-center my-24 bg-gray-100'>
       <div className='login'>
         <Toaster />
         <h1 className='text-4xl my-8'>Login</h1>
