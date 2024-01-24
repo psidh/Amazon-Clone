@@ -4,6 +4,7 @@ interface LogoutAccountsProps {
   handleLogout: () => void;
 }
 
+
 const LogoutAccounts: React.FC<LogoutAccountsProps> = ({ handleLogout }) => {
   return (
     <div>
