@@ -10,7 +10,7 @@ interface SlideProps {
 
 const Slide: React.FC<SlideProps> = ({ image }) => (
   <div className='md:visible invisible'>
-    <img src={image} alt='Photos' className='w-full h-1/2' />
+    <img src={image} alt='Photos' className='w-auto h-auto' />
   </div>
 );
 

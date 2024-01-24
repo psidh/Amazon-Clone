@@ -57,13 +57,14 @@ export default function SearchResultsPage({
   }, []);
 
   return (
-    <div>
-      <h1 className='text-2xl font-bold m-16'>Search Results</h1>
+    <div className='h-screen'>
+      <h1 className='text-2xl font-bold md:text-left text-center md:my-16 mx-8 my-6'>Search Results</h1>
+      <hr className='mb-6' />
       <div className='flex flex-col justify-between items-center'>
         {searchResults.map((result) => (
           <section
             key={result.name}
-            className='flex justify-items-start w-2/3 bg-gray-100 rounded-lg p-4 m-4'
+            className='flex justify-items-start md:w-[75%] bg-gray-100 rounded-lg p-4 my-8'
           >
             <div>
               <Image
@@ -96,7 +97,7 @@ export default function SearchResultsPage({
                 String(result?._id)
               )}`}
             >
-              <p className='text-lg text-teal-500 hover:text-amber-500'>View Details</p>
+              <p className='mt-2 text-lg text-teal-500 hover:text-amber-500'>View Details</p>
             </Link>
             </div>
           </section>
