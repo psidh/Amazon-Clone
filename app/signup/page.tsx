@@ -2,8 +2,9 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import axios from 'axios';
+import signUpUser from '@/utils/authentication/signup';
 import toast, { Toaster } from 'react-hot-toast';
+import axios from 'axios';
 
 export default function SignUp() {
   const router = useRouter();
@@ -19,23 +20,21 @@ export default function SignUp() {
 
   const [password2, setPassword2] = React.useState('');
   const [buttonDisabled, setButtonDisabled] = React.useState(true);
-  const [loading, setLoading] = React.useState(false);
 
-  const onSignUp = async () => {
+
+  const signUpUser = async () => {
     try {
-      setLoading(true);
+      toast.loading('Waiting...', {
+        duration: 2000,
+      });
       const response = await axios.post('/api/signup', user);
-
       toast.success('SignUp successful');
       router.push('/login');
-    } catch (error: any) {
-      console.log('SignUp Failed');
+    } catch (error) {
       console.log(error);
-      toast.error(error.message);
-    } finally {
-      setLoading(false);
     }
   };
+
 
   useEffect(() => {
     if (
@@ -169,7 +168,7 @@ export default function SignUp() {
           </div>
         ) : (
           <div className='flex flex-col'>
-            <button onClick={onSignUp} className='auth'>
+            <button onClick={signUpUser} className='auth'>
               SignUp
             </button>
             <Link href={'/login'}>Already a User? Login</Link>

@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import axios from 'axios';
 import { toast, Toaster } from 'react-hot-toast';
+import loginUser from '@/utils/authentication/login';
 
 export default function Login() {
   const router = useRouter();
@@ -15,18 +15,8 @@ export default function Login() {
 
   const [buttonDisabled, setButtonDisabled] = React.useState(true);
 
-  const onLogin = async () => {
-    try {
-      toast.loading('Waiting...', {
-        duration: 2000,
-      });
-      const response = await axios.post('/api/login', user);
-      toast.success('Login Successful');
-      router.push('/');
-    } catch (error: any) {
-      toast.error('Email or Password seems to be incorrect. Please try again');
-      console.log(error);
-    }
+  const handleLogin = async () => {
+    await loginUser(router, toast, user);
   };
 
   useEffect(() => {
@@ -38,7 +28,7 @@ export default function Login() {
   }, [user]);
 
   return (
-    <div className='flex flex-col justify-center items-center my-24'>
+    <div className='flex flex-col justify-center items-center my-24 '>
       <div className='login'>
         <Toaster />
         <h1 className='text-4xl my-8'>Login</h1>
@@ -80,7 +70,7 @@ export default function Login() {
           </div>
         ) : (
           <div className='flex flex-col'>
-            <button onClick={onLogin} className='auth'>
+            <button onClick={handleLogin} className='auth'>
               Login
             </button>
             <Link href={'/signup'}>New User? SignUp</Link>
