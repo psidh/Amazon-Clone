@@ -56,7 +56,7 @@ function Cart() {
   return (
     <div className='bg-gray-100 '>
       <Toaster />
-      <div className='flex flex-col lg:flex-row justify-between'>
+      <div className='flex flex-col-reverse items-center m-2 lg:flex-row justify-between'>
         <div className='flex flex-col w-full lg:w-4/5  items-start my-8 md:mx-16 p-4 border rounded-md bg-white '>
           {cart.length > 0 ? (
             <h1 className='text-left md:text-3xl mb-4'>Shopping Cart</h1>
@@ -109,7 +109,7 @@ function Cart() {
           </div>
         </div>
 
-        <div className='flex flex-col lg:w-1/5 items-start my-8 mx-16 p-2 border rounded-md bg-white'>
+        <div className='flex flex-col w-full lg:w-1/5 items-start my-8 mx-4 p-2 border rounded-md bg-white'>
           <p className='m-4'>
             <span className='font-semibold'>
               SubTotal ({cart.length} items):

@@ -26,8 +26,6 @@ function Navbar() {
     await logoutUser(router, toast);
   };
 
-
-
   return (
     <div>
       <Toaster />
