@@ -26,7 +26,7 @@ function Navbar() {
     await logoutUser(router, toast);
   };
 
-  const [message, setMessage] = useState(0);
+  const [isloggedIn, setisloggedIn] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,10 +45,13 @@ function Navbar() {
         }
 
         const data = await response.json();
-        if(data.message === "User Found"){
-          setMessage(1);
+        console.log(data);
+
+        if (data.message) {
+          console.log(data.message);
+
+          setisloggedIn(true);
         }
-        
       } catch (error) {
         console.error('Error:', error);
       }
@@ -65,7 +68,7 @@ function Navbar() {
         <Deliver />
         <Search />
         <Language />
-        {message === 0 ? (
+        {isloggedIn ? (
           <LogoutAccounts handleLogout={handleLogout} />
         ) : (
           <div></div>
