@@ -15,11 +15,8 @@ export default function Login() {
 
   const [buttonDisabled, setButtonDisabled] = React.useState(true);
 
-  const [loading, setLoading] = React.useState(false);
-
   const onLogin = async () => {
     try {
-      setLoading(true);
       toast.loading('Waiting...', {
         duration: 2000,
       });
@@ -29,8 +26,6 @@ export default function Login() {
     } catch (error: any) {
       toast.error('Email or Password seems to be incorrect. Please try again');
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   };
 
