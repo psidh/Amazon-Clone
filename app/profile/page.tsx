@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import User from '@/utils/interfaces/user';
 import { toast, Toaster } from 'react-hot-toast';
+import Loading from '@/components/loading';
 
 export default function Profile() {
   const [user, setUser] = useState<User>();
@@ -70,7 +71,7 @@ export default function Profile() {
             </div>
           </>
         ) : (
-          <p className='flex flex-col justify-center items-center h-screen text-lg font-semibold'>Loading...</p>
+          <Loading />
         )}
       </div>
     </section>

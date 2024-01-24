@@ -12,12 +12,12 @@ function Secbar() {
     <div className='bg-[#232f3e] px-4 py-2 text-white'>
       <div className='hidden sm:flex'>
         <div className='text-sm flex flex-row justify-between items-center bg-[#232f3e]'>
-          <p >All</p>
-          <p >Today's Deals</p>
-          <p >Customer Service</p>
-          <p >Registry</p>
-          <p >Gift Cards</p>
-          <p >Sell</p>
+          <p className='mx-2'>All</p>
+          <p className='mx-2'>Today's Deals</p>
+          <p className='mx-2'>Customer Service</p>
+          <p className='mx-2'>Registry</p>
+          <p className='mx-2'>Gift Cards</p>
+          <p className='mx-2'>Sell</p>
         </div>
       </div>
 

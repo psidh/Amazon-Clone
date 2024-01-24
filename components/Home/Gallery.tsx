@@ -40,7 +40,7 @@ const Gallery: React.FC = () => {
       title: 'iPhone 15',
       image: '/products/iPhone.jpeg',
       description: 'See all offers',
-      link: '/sample-iphone',
+      link: '/search/iphone',
     },
     {
       title: 'Sports at ₹499',

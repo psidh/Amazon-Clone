@@ -5,11 +5,13 @@ import Product from '@/utils/interfaces/product';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { toast, Toaster } from 'react-hot-toast';
+import Loading from '@/components/loading';
 
 function Cart() {
   const [cart, setCart] = useState<Array<Product>>([]);
   const [total, setTotal] = useState(0);
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,8 +37,12 @@ function Cart() {
           0
         );
         setTotal(totalPrice);
+        setLoading(false);
       } catch (error) {
         console.error('Client error:', error);
+        setLoading(false);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -53,11 +59,19 @@ function Cart() {
     }
   };
 
+  if (loading) {
+    return (
+      <div className='bg-gray-100 '>
+        <Loading />
+      </div>
+    );
+  }
+
   return (
     <div className='bg-gray-100 '>
       <Toaster />
       <div className='flex flex-col-reverse items-center m-2 lg:flex-row justify-between'>
-        <div className='flex flex-col w-full lg:w-4/5  items-start my-8 md:mx-16 p-4 border rounded-md bg-white '>
+        <div className='flex flex-col w-full lg:w-4/5 items-start my-8 md:mx-8 p-4 border rounded-md bg-white '>
           {cart.length > 0 ? (
             <h1 className='text-left md:text-3xl mb-4'>Shopping Cart</h1>
           ) : (
@@ -109,8 +123,8 @@ function Cart() {
           </div>
         </div>
 
-        <div className='flex flex-col w-full lg:w-1/5 items-start my-8 mx-4 p-2 border rounded-md bg-white'>
-          <p className='m-4'>
+        <div className='flex flex-col justify-between w-full lg:w-1/5 items-start my-4 mx-4 p-2 border rounded-md bg-white'>
+          <p className='my-6 mx-4'>
             <span className='font-semibold'>
               SubTotal ({cart.length} items):
             </span>{' '}
@@ -118,7 +132,7 @@ function Cart() {
           </p>
           <button
             onClick={handleOrder}
-            className='w-full py-1 my-2 bg-yellow-400 hover:bg-yellow-500 rounded-lg
+            className='w-full py-1 my-4 bg-yellow-400 hover:bg-yellow-500 rounded-lg
       shadow-md'
           >
             Proceed to Buy

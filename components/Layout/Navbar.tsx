@@ -1,8 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FiMenu } from 'react-icons/fi';
 import { useRouter } from 'next/navigation';
-import { toast, Toaster } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import logoutUser from '@/utils/authentication/logout';
 import Mobile from './NavbarComponents/Mobile';
 import Logo from './NavbarComponents/Logo';
@@ -26,17 +26,57 @@ function Navbar() {
     await logoutUser(router, toast);
   };
 
+  const [isloggedIn, setisloggedIn] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`/api/profile`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          console.error('Server error:', response);
+          console.error('Failed to fetch data from the server');
+          return;
+        }
+
+        const data = await response.json();
+        console.log(data);
+
+        if (data.message) {
+          console.log(data.message);
+
+          setisloggedIn(true);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
-      <Toaster />
+      {/* <Toaster /> */}
       <div className='flex justify-between items-center bg-[#131a22] py-1 px-4'>
         <Logo />
         <Deliver />
         <Search />
         <Language />
-        <LogoutAccounts handleLogout={handleLogout} />
+        {isloggedIn ? (
+          <LogoutAccounts handleLogout={handleLogout} />
+        ) : (
+          <div></div>
+        )}
+
         <ReturnsOrders />
         <Cart />
+
         <div
           className='flex lg:hidden w-5 h-5 cursor-pointer text-white'
           onClick={toggleNav}

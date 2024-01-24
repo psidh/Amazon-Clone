@@ -1,8 +1,10 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Loading from '@/components/loading'
 export default function page() {
   const [orders, setOrders] = useState<Array<any>>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,13 +26,23 @@ export default function page() {
         // console.log(data[0].product);
         
         setOrders(data);
+        setLoading(false);
       } catch (error) {
         console.error('Client error:', error);
+        setLoading(false);
+      } finally{
+        setLoading(false);
       }
     };
 
     fetchData();
   }, []);
+
+  if(loading){
+    return (
+      <Loading />
+    )
+  }
 
   return (
     <div className='bg-gray-100'>
