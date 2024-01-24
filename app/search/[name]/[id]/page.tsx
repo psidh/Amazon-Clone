@@ -6,6 +6,7 @@ import Product from '@/utils/interfaces/product';
 import Image from 'next/image';
 import Date from '@/utils/getDate';
 import toast, { Toaster } from 'react-hot-toast';
+import axios from 'axios';
 
 // Define the ProductDetail component
 const ProductDetail = ({ params }: { params: { id: string } }) => {
@@ -62,8 +63,28 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
     router.push('/cart');
   };
 
-  const handleBuyNow = () => {
-    router.push('/');
+  // console.log(product);
+  
+  const handleBuyNow = async () => {
+    try {
+      const response = await fetch('/api/buy/buynow', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(product),
+      });
+
+      if (!response.ok) {
+        console.error('Server error:', response);
+        console.error('Failed to fetch data from the server');
+        return;
+      }
+      toast.success('Product Purchased');
+    } catch (error: any) {
+      console.log(error.message);
+    }
+    router.push('/orders');
   };
 
   const handleWishList = () => {
@@ -71,7 +92,11 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
   };
 
   if (!product) {
-    return <div className='flex flex-col justify-center items-center h-screen'>Loading...</div>;
+    return (
+      <div className='flex flex-col justify-center items-center h-screen'>
+        Loading...
+      </div>
+    );
   }
 
   return (
@@ -131,8 +156,8 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
             <div className='flex flex-col md:w-2/6 p-4 rounded-md shadow-md text-sm my-2 mb-4'>
               <h2 className='font-semibold'>No Cost EMI</h2>
               <p className=''>
-                Upto ₹{(product.price / 12).toPrecision(2)} EMI interest savings on select Credit
-                Cards
+                Upto ₹{(product.price / 12).toPrecision(2)} EMI interest savings
+                on select Credit Cards
               </p>
             </div>
             <hr />
