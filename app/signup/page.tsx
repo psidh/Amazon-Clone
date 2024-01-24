@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import signUpUser from '@/utils/authentication/signup';
 import toast, { Toaster } from 'react-hot-toast';
+import axios from 'axios';
 
 export default function SignUp() {
   const router = useRouter();
@@ -20,25 +21,20 @@ export default function SignUp() {
   const [password2, setPassword2] = React.useState('');
   const [buttonDisabled, setButtonDisabled] = React.useState(true);
 
-  // const onSignUp = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await axios.post('/api/signup', user);
 
-  //     toast.success('SignUp successful');
-  //     router.push('/login');
-  //   } catch (error: any) {
-  //     console.log('SignUp Failed');
-  //     console.log(error);
-  //     toast.error(error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const signUpUser = async () => {
+    try {
+      toast.loading('Waiting...', {
+        duration: 2000,
+      });
+      const response = await axios.post('/api/signup', user);
+      toast.success('SignUp successful');
+      router.push('/login');
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const handleSignUp = async() => {
-    await  signUpUser(toast, router, user)
-  }
 
   useEffect(() => {
     if (
@@ -172,7 +168,7 @@ export default function SignUp() {
           </div>
         ) : (
           <div className='flex flex-col'>
-            <button onClick={handleSignUp} className='auth'>
+            <button onClick={signUpUser} className='auth'>
               SignUp
             </button>
             <Link href={'/login'}>Already a User? Login</Link>

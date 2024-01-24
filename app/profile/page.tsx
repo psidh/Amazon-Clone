@@ -24,9 +24,7 @@ export default function Profile() {
         }
 
         const data = await response.json();
-        toast.dismiss(); // Dismiss the loading toast
         toast.success('Profile loaded successfully');
-        toast.dismiss(); // Dismiss the loading toast
         setUser(data.data);
       } catch (error) {
         console.error('Error:', error);
@@ -40,7 +38,6 @@ export default function Profile() {
     <section className='flex items-center justify-center my-12'>
       <div className='w-[50%] p-6 '>
         <Toaster />
-
         {user ? (
           <>
             <a href='/' className='text-lg text-teal-500 hover:text-amber-500'>
