@@ -95,7 +95,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
 
         <div className='flex lg:w-3/6 lg:px-4 container mx-auto'>
           <div className='flex flex-col lg:flex-grow sm:flex-shrink'>
-            <h1 className='text-2xl'>{product.name.toUpperCase()}</h1>
+            <h1 className='text-2xl'>{product.name}</h1>
             <a
               href={`https://${product.brand}.com/`}
               className='text-sm text-teal-600 hover:text-amber-600 pb-2'
@@ -128,10 +128,10 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
                 Inclusive of all Taxes
               </p>
             </div>
-            <div className='flex flex-col w-2/6 p-4 rounded-md shadow-md text-sm my-2 mb-4'>
+            <div className='flex flex-col md:w-2/6 p-4 rounded-md shadow-md text-sm my-2 mb-4'>
               <h2 className='font-semibold'>No Cost EMI</h2>
               <p className=''>
-                Upto ₹{product.price / 12} EMI interest savings on select Credit
+                Upto ₹{(product.price / 12).toPrecision(2)} EMI interest savings on select Credit
                 Cards
               </p>
             </div>
