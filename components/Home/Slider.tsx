@@ -9,8 +9,8 @@ interface SlideProps {
 }
 
 const Slide: React.FC<SlideProps> = ({ image }) => (
-  <div className=''>
-    <img src={image} alt='Photos' className='w-auto h-auto' />
+  <div className='md:visible invisible'>
+    <img src={image} alt='Photos' className='w-full h-1/2' />
   </div>
 );
 
@@ -30,13 +30,13 @@ const Slides: React.FC = () => {
     },
   ];
   const CustomNextArrow: React.FC<any> = (props) => (
-    <div {...props}>
+    <div {...props} className='md:visible invisible'>
       <FaChevronRight className='text-3xl text-white' />
     </div>
   );
 
   const CustomPrevArrow: React.FC<any> = (props) => (
-    <div {...props}>
+    <div {...props} className='md:visible invisible'>
       <FaChevronLeft className='text-3xl text-white' />
     </div>
   );
@@ -53,6 +53,7 @@ const Slides: React.FC = () => {
   };
 
   return (
+    <section className='md:visible invisible'>
     <Slider {...settings}>
       {slidesData.map((slide, index) => (
         <div key={index}>
@@ -60,6 +61,7 @@ const Slides: React.FC = () => {
         </div>
       ))}
     </Slider>
+    </section>
   );
 };
 
