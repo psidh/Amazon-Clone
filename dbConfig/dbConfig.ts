@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 
 export async function connect() {
   try {
+    if(process.env.NODE_ENV == "production"){
     mongoose.connect(process.env.MONGODB_URI!);
     const connection = mongoose.connection;
 
@@ -15,7 +16,7 @@ export async function connect() {
       );
       process.exit();
     });
-    
+    }
   } catch (error) {
     console.log(error);
   }
