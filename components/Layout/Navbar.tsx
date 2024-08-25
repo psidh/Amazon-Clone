@@ -71,7 +71,7 @@ function Navbar() {
         {isloggedIn ? (
           <LogoutAccounts handleLogout={handleLogout} />
         ) : (
-          <div></div>
+          <a href="/login" className="text-white pr-1 mb-1">Login</a>
         )}
 
         <ReturnsOrders />
