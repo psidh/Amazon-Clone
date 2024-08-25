@@ -30,4 +30,4 @@ testuser@example.com
 - Node.js
 - Vercel
  
-Demo: [Amazon Clone](https://amazon-clone-psi.vercel.app/)
+Demo: [Amazon Clone](https://psidh-amazon.vercel.app/)
